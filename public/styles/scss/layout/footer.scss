@@ -4,4 +4,38 @@
 	background-color: #232323;
 	border-top: #212121 1px solid;
 
+	.menu {
+
+		list-style: none;
+		padding: 0;
+
+		li {
+
+			margin-bottom: 7px;
+
+			a {
+			
+				color: #187FE6;
+
+				&:hover {
+				
+					text-decoration: underline;
+
+				}
+
+			}
+
+		}
+
+	}
+
+	.copyright {
+	
+		display: block;
+		margin-top: 30px;
+		color: #fff;
+		text-align: right;
+
+	}
+
 }
