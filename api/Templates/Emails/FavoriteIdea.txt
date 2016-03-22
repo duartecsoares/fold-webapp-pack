@@ -1,0 +1,1 @@
+@{{from.username}} fave'd your idea {{idea.name}}

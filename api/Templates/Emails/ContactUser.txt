@@ -1,0 +1,3 @@
+@{{from.username}} sent you an Inquiry.
+Message:
+{{message}}

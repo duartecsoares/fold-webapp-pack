@@ -1,0 +1,17 @@
+{
+  "name": "Fold WebApp Pack",
+  "version": "0.0.1",
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "grunt-complexity": "^0.3.0",
+    "grunt-contrib-watch": "^0.6.1"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-autoprefixer": "^2.2.0",
+    "grunt-bower-install-simple": "^1.1.0",
+    "grunt-contrib-requirejs": "*",
+    "grunt-contrib-sass": "^0.8.1",
+    "grunt-serve": "^0.1.6"
+  }
+}

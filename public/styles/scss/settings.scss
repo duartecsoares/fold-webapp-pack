@@ -1,0 +1,468 @@
+//  ############################################  Foundation Grid Override / Redefine
+
+$row-width: 		61.875rem;
+$rem-base: 			16px;
+$last-child-float: 	left;
+$column-gutter: 	3rem;
+
+//  ############################################  CDN Path
+
+$cdn-interface : "https://s3.amazonaws.com/buildit-storage/webapp/";
+
+@function asset($name, $folder : 'interface', $cdn : true){
+	$base : "assets/";
+	@if $cdn == true { $base : $cdn-interface; }
+	@return $base + $folder + "/" + $name;
+}
+
+@function asset-url($name, $folder : 'interface', $cdn : true){
+	@return url( asset($name, $folder, $cdn) );
+}
+
+//  ############################################  StarterKit by Fold
+
+// Fonts
+
+$sk-font-sans: "futura-pt", Lato, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !default;
+
+$sk-font-weight-100: 	100;
+$sk-font-weight-200: 	200;
+$sk-font-weight-300: 	300;
+$sk-font-weight-400: 	400;
+$sk-font-weight-500: 	500;
+$sk-font-weight-600: 	600;
+$sk-font-weight-700: 	700;
+$sk-font-weight-800: 	800;
+$sk-font-weight-900: 	900;
+$sk-font-weight-normal: normal;
+$sk-font-weight-bold: 	bold;
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+// StarterKit by Fold
+// colors.scss
+
+// constant variables are marked with _
+
+$sk-_white:	#ffffff;
+
+//main colors
+
+$sk-primary-light-color:	#A5D3FA; // Only on BIWM
+$sk-primary-color:			#5199FC;
+$sk-primary-dark-color:		#3A83E6; // Only on BIWM
+$sk-primary-dark-color-2:	#428EF5; // Only on BIWM
+$sk-primary-dark-color-3:	#2578E9; // Only on BIWM
+
+$sk-primary-color-rgba-30:	rgba(81, 153, 252, 0.3);
+
+//grays
+
+$sk-gray-dark: 		#333333;
+$sk-gray: 			#9EA4A7;
+$sk-gray-light: 	#C9CED0;
+$sk-gray-lighter: 	#EAEEF0;
+$sk-gray-lightest: 	#F7F9FA;
+
+					
+$sk-gray2: 			#898E90; // Only on BIWM
+$sk-gray-light2: 	#DFE3E5; // Only on BIWM
+$sk-gray-light3:	#B9BEC0; // Only on BIWM
+$sk-gray-darker: 	#181717; // Only on BIWM
+
+$sk-gray-lightest-rgba-92: 	rgba(247, 249, 250, 0.92);
+
+$sk-white-rgba-40: 	rgba(255, 255, 255, 0.4); // Only on BIWM
+$sk-white-rgba-60: 	rgba(255, 255, 255, 0.6); // Only on BIWM
+$sk-black-rgba-40: 	rgba(0, 0, 0, 0.4); // Only on BIWM
+$sk-black-rgba-6: 	rgba(0, 0, 0, 0.06); // Only on BIWM
+
+$sk-dark-blue-rgba-40: rgba(38, 40, 40, 0.4);	// rgba(62, 65, 66, 0.4); // Only on BIWM
+$sk-dark-blue-rgba-60: rgba(38, 40, 40, 0.6);	// rgba(62, 65, 66, 0.6); // Only on BIWM
+$sk-dark-blue-rgba-90: rgba(38, 40, 40, 0.97);
+
+$sk-success-color:	#84ECB2;
+$sk-warning-color: 	#FFEDA4;
+$sk-info-color: 	$sk-gray-light;	// todo review this color
+$sk-error-color:	#EF91AE;
+$sk-disabled-color: $sk-gray-light; // Only on BIWM
+
+// Social Colors
+
+$sk-dribbble-color: #ea4c89;
+$sk-github-color: 	#3D76C3;
+$sk-twitter-color: 	#6CADDE;
+
+$sk-follow-color: 		#EF91AE;
+$sk-follow-hover-color: #F17C9E;
+
+// Privacy Colors
+
+$privacy-private-bg: 	#CC61B0;
+$privacy-private-shape: #A31C81;
+$privacy-hidden-bg: 	#6A38C0;
+$privacy-hidden-shape: 	#4423B4;
+$privacy-public-bg: 	#5199FC;
+$privacy-public-shape: 	#2578E9;
+
+// Other Colors
+
+$featured-color: #FCE588;
+
+
+
+// ////////////////////////////////////////////////////////////////////////////////////////////////
+
+// ////////////////////////////////////////////////////////////////////////////////////////////////
+
+// ////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//
+////////////////////////////////
+
+// 2. Typography
+//
+// 2.1 Base Font Settings
+//
+
+$sk-base-font-size: 	16;			//base settings aka base unit for most multipliers
+
+
+// 2.2 Headings
+//
+// set heading value or it uses default one
+
+$sk-heading-biggest-size: 	40;
+$sk-heading-big-size: 		36px;
+$sk-heading-medium-size: 	26px;
+$sk-heading-small-size: 	20px;
+$sk-heading-smallest-size: 	14px;
+
+$sk-heading-biggest-margin: 	48px 0;
+$sk-heading-big-margin: 		16px 0;
+$sk-heading-medium-margin: 		16px 0;
+$sk-heading-small-margin: 		16px 0;
+$sk-heading-smallest-margin: 	12px 0;
+
+$sk-heading-biggest-weight: 	$sk-font-weight-600;
+$sk-heading-big-weight: 		$sk-font-weight-600;
+$sk-heading-medium-weight: 		$sk-font-weight-600;
+$sk-heading-small-weight: 		$sk-font-weight-600;
+$sk-heading-smallest-weight: 	$sk-font-weight-500;
+
+$sk-heading-biggest-letter-spacing: 	0;
+$sk-heading-big-letter-spacing: 		0;
+$sk-heading-medium-letter-spacing: 		0;
+$sk-heading-small-letter-spacing: 		0;
+$sk-heading-smallest-letter-spacing: 	1px;
+		
+$sk-heading-biggest-text-transform: 	none;
+$sk-heading-big-text-transform: 		none;
+$sk-heading-medium-text-transform: 		none;
+$sk-heading-small-text-transform: 		none;
+$sk-heading-smallest-text-transform: 	uppercase;
+
+
+// 2.3 Paragraphs
+//
+
+$sk-paragraph-size: 		17px;
+$sk-paragraph-line-height: 	26px;
+$sk-paragraph-margin:		16px 0;
+
+$sk-paragraph-size-small: 			13px;
+$sk-paragraph-line-height-small:	14px;
+$sk-paragraph-margin-small:			12px 0;
+$sk-paragraph-weight-small:			$sk-font-weight-400;
+
+$sk-paragraph-size-smaller: 		13px;
+$sk-paragraph-line-height-smaller:	14px;
+$sk-paragraph-margin-smaller:		12px 0;
+$sk-paragraph-weight-smaller:		$sk-font-weight-500;
+
+
+// 2.4 Links <a>
+//
+
+$sk-a-color: 			$sk-gray-dark;
+$sk-a-decoration: 		none;
+$sk-a-decoration-hover: none;
+
+
+////////////////////////////////
+
+// 3. Buttons
+//
+// Buttons base styles
+
+$sk-button-font-weight:			$sk-font-weight-600;
+$sk-button-text-transform: 		uppercase;
+$sk-button-letter-spacing: 		0.4px;
+
+$sk-button-font-size-big: 		14px;
+$sk-button-font-size: 			12px;
+$sk-button-font-size-small: 	12px;
+
+$sk-button-padding-vertical-big:	20px;
+$sk-button-padding-vertical-medium:	11px;
+$sk-button-padding-vertical-small:	7px;
+
+$sk-button-padding-sides-big:		24px;
+$sk-button-padding-sides-medium:	16px;
+$sk-button-padding-sides-small:		18px;
+
+
+$sk-button-border-width-big: 	0;
+$sk-button-border-width-medium: 0;
+$sk-button-border-width-small: 	0;
+
+$sk-button-bg: 			$sk-primary-color;
+$sk-button-success-bg:	$sk-success-color;
+$sk-button-disabled-bg:	$sk-info-color;
+$sk-button-error-bg:	$sk-error-color;
+
+$sk-button-bg-hover-dark: 10%;
+$sk-button-bg-hover-dark2: 38%;  //Only on BIWM
+
+$sk-button-bg-hover: $sk-primary-dark-color;
+
+
+// // 3.1 Secondary
+// //
+
+$sk-button-secondary-font-weight:		$sk-font-weight-900;
+$sk-button-secondary-text-transform: 	uppercase;
+$sk-button-secondary-letter-spacing: 	0.4px;
+$sk-button-secondary-font-size: 		12px;
+$sk-button-secondary-padding-vertical:	10px;
+$sk-button-secondary-padding-sides:		14px;
+$sk-button-secondary-bg:				$sk-_white; 
+$sk-button-secondary-bg-hover:			$sk-gray-lightest;
+$sk-button-secondary-color: 			$sk-gray-dark;
+$sk-button-secondary-color-hover: 		$sk-gray-dark;
+$sk-button-secondary-border-color: 		$sk-gray-light2;
+
+
+
+// // 3.2 Terciary
+// //
+
+$sk-button-terciary-font-weight:		$sk-font-weight-400;
+$sk-button-terciary-font-size: 			14px;
+$sk-button-terciary-text-transform: 	none;
+$sk-button-terciary-padding-vertical:	$sk-button-padding-vertical-small;
+$sk-button-terciary-padding-sides:		0;
+$sk-button-terciary-border-width: 		0;
+$sk-button-terciary-border-radius:		0;
+$sk-button-terciary-bg:					transparent; 
+$sk-button-terciary-bg-hover:			transparent;
+$sk-button-terciary-color: 				$sk-gray-dark;
+$sk-button-terciary-color-hover: 		$sk-gray-dark;
+
+
+
+
+
+////////////////////////////////
+
+// 4. Inputs
+//
+// Inputs base styles
+//
+
+// Input Label
+//
+
+
+$sk-input-label-font-size: 	16px; 
+$sk-input-label-padding: 	0 0 4px;
+
+//
+// 4.1 Text Input
+//
+
+$sk-input-font-size:		16px;
+$sk-input-line-height:		24px;
+$sk-input-border-thickness:	1px;
+$sk-input-border-radius: 	3px;
+$sk-input-border-color: 	$sk-gray-lighter;
+$sk-input-border-focus: 	$sk-primary-color;
+$sk-input-padding: 			7px 14px 7px;
+$sk-input-placeholder: 		$sk-gray-light;
+$sk-input-color: 			$sk-gray-dark;
+$sk-input-bg: 				$sk-_white;
+$sk-input-shadow-default:	0 0 0 10rem $sk-_white inset;
+$sk-input-shadow-focus:		0px 0px 5px $sk-primary-color-rgba-30;
+
+
+// 4.1.1 Text Password
+
+$sk-input-password-image: none;
+$sk-input-password-position: none;
+
+// //
+// // 4.5 Switch Input 
+// //
+
+// TO DO: add different sizes
+
+$sk-switch-height:		26;
+$sk-switch-width:		52;
+$sk-switch-border-size: 1;
+
+
+// $sk-switch-color-bg: 		$sk-_white !default;
+// $sk-switch-color: 			$sk-gray !default;
+// $sk-switch-color-checked: 	$sk-gray-dark !default;
+
+// $sk-switch-border:			$sk-switch-border-size+px solid $sk-gray !default;
+// $sk-switch-border-checked:	$sk-switch-border-size+px solid $sk-gray-dark !default;
+
+$sk-switch-circle-size:			18;
+// $sk-switch-circle-ident: 			($sk-switch-height - $sk-switch-circle-size - $sk-switch-border-size*2)/2;;
+// $sk-switch-circle-margin-checked:	$sk-switch-width - $sk-switch-circle-size - $sk-switch-circle-ident*2 - $sk-switch-border-size*2;
+
+
+////////////////////////////////
+
+////////////////////////////////
+
+// 7. Navigation
+
+//
+// 7.1 General Nav
+//
+
+$sk-nav-font-weight:	$sk-font-weight-500;
+$sk-nav-text-transform:	uppercase;
+$sk-nav-letter-spacing: 0.5px;
+$sk-nav-font-size: 		12px;
+
+$sk-nav-link-color:				$sk-gray-dark;
+$sk-nav-link-color-hover:		$sk-gray-dark;
+$sk-nav-link-color-selected:	$sk-gray-dark;
+
+//
+// 7.4 nav main
+//
+
+$bd-header-height: 70px;
+
+$sk-nav-main-bg: $sk-gray-lighter;
+
+$sk-nav-main-link-padding-vertical:	24px;
+$sk-nav-main-link-padding-sides:	15px;
+$sk-nav-main-link-color: 			$sk-gray-dark;
+$sk-nav-main-link-color-selected: 	$sk-gray-dark;
+$sk-nav-main-link-color-hover: 		$sk-gray-dark;
+
+$sk-nav-main-link-bg-selected: 		transparent;
+
+$sk-nav-main-link-font-weight:		$sk-font-weight-500;
+
+$sk-nav-main-link-text-transform:	uppercase;
+$sk-nav-main-link-letter-spacing:	0.5px;
+$sk-nav-main-link-font-size: 		12px;
+$sk-nav-main-link-line-height: 		22px; // Only on BIWM
+
+
+$sk-nav-logo-margin-left: 		6px;
+$sk-nav-logo-link-margin-right:	16px;
+
+$sk-nav-logo-link-font-weight: 		$sk-font-weight-500;
+$sk-nav-logo-link-text-transform: 	uppercase;
+$sk-nav-logo-link-letter-spacing:	1px;
+$sk-nav-logo-link-font-size: 		14px;
+$sk-nav-logo-link-color:			$sk-gray-dark;
+
+
+////////////////////////////////
+
+////////////////////////////////
+
+// 8. Modal
+
+$sk-modal-bg-color:		$sk-gray-lightest-rgba-92;
+$sk-modal-mobile-width:	84%;
+$sk-modal-max-width: 	320px;
+$sk-modal-padding:		0;
+$sk-modal-color:		$sk-_white; // TO DO: bg on starterkit
+//$sk-modal-text-color:	$sk-gray-dark !default; // TO DO: just color on starterkit
+$sk-modal-radius:		3px;
+$sk-modal-shadow:		0px 2px 20px 0px rgba(51, 51, 51, 0.12), 0px 0px 0px 1px rgba(0, 0, 0, 0.05);
+$sk-modal-close-ident:	20px;
+
+
+
+////////////////////////////////
+
+////////////////////////////////
+
+// 10. Avatar
+//
+
+$sk-avatar-default-image:	asset-url('default-avatar.svg');
+$sk-avatar-bg:				$sk-gray-light; // todo: add to SK
+
+$sk-avatar-small:	40px;
+$sk-avatar-medium:	80px;
+$sk-avatar-big:		92px;
+
+$sk-avatar-rounded-radius:	8px;
+$sk-avatar-circle-radius:	50%;
+
+$avatar-big-border: 5px solid #fff;
+
+
+
+////////////////////////////////
+
+////////////////////////////////
+
+// 11. Dropdown
+//
+
+// TO DO: Make this useful
+
+$sk-dropdown-icon: 			asset-url('sort.svg');
+$sk-dropdown-icon-size:		16px;
+$sk-dropdown-icon-margin:	12px;
+$sk-dropdown-padding:		6px 0 8px;
+$sk-dropdown-font-size:		0.875rem;
+$sk-dropdown-font-weight:	$sk-font-weight-400;
+$sk-dropdown-icon-ident:	$sk-dropdown-icon-size;
+
+$sk-dropdown-width:			150px;
+$sk-dropdown-bg:			#ffffff;
+$sk-dropdown-border:		none;
+$sk-dropdown-box-shadow:	0px 1px 7px 0px rgba(51, 51, 51, 0.12), 0px 0px 0px 1px rgba(0, 0, 0, 0.05);
+$sk-dropdown-radius:		2px;
+
+$sk-dropdown-item-border:	none;
+
+$sk-dropdown-link-padding:		6px 20px;
+$sk-dropdown-link-color:		#6F7375;
+$sk-dropdown-link-color-hover:	$sk-primary-color;
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////

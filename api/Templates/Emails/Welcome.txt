@@ -1,0 +1,3 @@
+Welcome {{to.username}}!
+Explore awesome ideas and take part on the next big thing!
+or or share your own idea and find the right person to help with your idea.

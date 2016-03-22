@@ -1,0 +1,98 @@
+<!-- Updated! -->
+<div class="container" style="width:96%;max-width:702px;margin-top:0;margin-bottom:0;margin-right:auto;margin-left:auto;font-family:'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;font-weight:300;font-size:15px;color:#6F7375;line-height:26px;letter-spacing:0.2px;padding-top:24px;padding-bottom:36px;">
+
+	<div class="header" style="padding-bottom:36px;" >
+		
+		<a href="{{routes.app}}"> <img src="{{routes.image_biwm_logo}}" width="158" height="30" alt="Build It With Me"> </a>
+
+	</div>
+
+	<div class="card" style="background-color:#FFFFFF;">
+
+		<div class="card-content" style="padding-top:36px;padding-bottom:36px;padding-right:36px;padding-left:36px;border-width:1px;border-style:solid;border-color:#E8EDF0;border-top-left-radius:2px;border-top-right-radius:2px;">
+			
+			<div class="subject" style="display:table;" >
+
+				<a class="cell" href="{{routes.user_profile}}{{from.username}}" style="display:table-cell;vertical-align:top;" >
+				
+					{% if from.avatar %} 
+						
+					<img class="subject-avatar" src="{{from.avatar}}" width="54" height="54" alt="" style="vertical-align:middle;border-radius:50%;" >
+	 		
+	 				{% else %} 
+			
+					<img class="subject-avatar" src="{{routes.image_default_avatar}}" width="54" height="54" alt="" style="vertical-align:middle;border-radius:50%;" >
+
+					{% endif %}
+
+				</a>
+
+				<div class="cell subject-text" style="display:table-cell;vertical-align:top;padding-left:18px;padding-top:4px;" >
+
+					<div class="subject-text-content" style="line-height:22px;padding-bottom:6px;" >
+
+						<a class="subject-link" href="{{routes.user_profile}}{{from.username}}" style="color:#4898FF;text-decoration:none;font-weight:bold;" > 
+						
+							{% if from.fullname %} {{from.fullname}} {% else %} @{{from.username}} {% endif %}
+
+						</a>
+
+						<span style="color:#6F7375;">sent you a message.</span>
+
+					</div>
+
+					<div class="subject-text-info" style="line-height:17px;" >
+
+						<span class="subject-info" style="font-size:13px;margin-right:7px;color:#6F7375;" ><span class="subject-info-b" style="color:#1A1A20;font-weight:bold;" >{{from.followers_count}}</span> followers</span>
+						<span class="subject-info" style="font-size:13px;margin-right:7px;color:#6F7375;" ><span class="subject-info-b" style="color:#1A1A20;font-weight:bold;" >{{from.idea_count}}</span> ideas</span>
+						{% if from.connections.dribbble %}
+						<span class="subject-info" style="font-size:13px;margin-right:7px;color:#6F7375;" ><span class="subject-info-b" style="color:#1A1A20;font-weight:bold;" >{{from.connections.dribbble.followers_count}}</span> <img src="{{routes.image_dribbble_logo}}" width="10" height="10" alt="dribbble"></span>
+						{% endif %}
+						{% if from.connections.github %}
+						<span class="subject-info" style="font-size:13px;margin-right:7px;color:#6F7375;" ><span class="subject-info-b" style="color:#1A1A20;font-weight:bold;" >{{from.connections.github.followers}}</span> <img src="{{routes.image_github_logo}}" width="10" height="10" alt="github"></span>
+						{% endif %}
+						
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="message" style="margin-top:28px;word-wrap:break-word;" > 
+
+				{{message}}
+
+			</div>
+
+		</div>
+
+		<div class="card-details" style="background-color:#F7F9FA;color:#1A1A20;padding-top:32px;padding-bottom:32px;padding-right:36px;padding-left:36px;border-width:1px;border-style:solid;border-color:#E8EDF0;border-top-width:0px;border-bottom-left-radius:2px;border-bottom-right-radius:2px;" >
+			
+			<img class="reply-icon" src="{{routes.image_reply}}" width="15" height="13" style="margin-right:7px;" ><span style="font-weight:bold;">Reply to this email</span> to respond to {% if from.fullname %}{{from.fullname}}{% else %}@{{from.username}}{% endif %}, whose email is the reply-to address.
+
+		</div>
+
+	</div>
+
+	<div class="footer" style="margin-top:48px;" >
+		
+		<div class="footnotes" style="font-size:12px;line-height:20px;letter-spacing:0.2px;color:#6F7375 !important;" >
+
+			Email sent to you by Build It With Me &copy; Copyright 2016. <br />
+			Don&#39;t want to receive emails like this in the future? <br />
+			You can update your <a class="notifications" href="{{routes.user_settings_notifications}}" style="color:#6F7375;text-decoration:underline;" >Email Notifications.</a> 
+			<br />
+			
+		</div>
+		
+		<div class="social" style="margin-top:16px;" >
+			
+			<a class="social-link" href="{{routes.twitter}}" style="margin-right:16px;" ><img src="{{routes.image_twitter_logo}}" width="18" height="18" alt="twitter"></a>
+
+		</div>
+
+		<div style="color:#fff;font-size:12px;">{{routes.time_stamp}}</div>		
+		
+	</div>
+
+</div>

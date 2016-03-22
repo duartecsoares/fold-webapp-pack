@@ -1,0 +1,12 @@
+*.DS_Store
+*.log
+*.scssc
+
+.sass-cache
+api/config.php
+css
+report
+vendor
+node_modules
+scss/fold-starterkit/scenarios/*.scss
+dist/*

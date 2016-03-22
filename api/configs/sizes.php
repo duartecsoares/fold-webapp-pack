@@ -1,0 +1,12 @@
+<?php
+
+    define('THUMBNAIL_IMAGE_MAX_WIDTH', 400);
+    define('THUMBNAIL_IMAGE_MAX_HEIGHT', 400);
+    define('AVATAR_QUALITY', 90);
+
+    define('THUMBNAILBLUR_IMAGE_MAX_WIDTH', 800);
+    define('THUMBNAILBLUR_IMAGE_MAX_HEIGHT', 800);
+
+    define('GALLERY_IMAGE_MAX_WIDTH', 1200);
+    define('GALLERY_IMAGE_MAX_HEIGHT', 1200);
+    define('GALLERY_QUALITY', 75);
