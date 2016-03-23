@@ -2,7 +2,8 @@ define(["fold/controller",
 		"router",
 		"layout",
 		"settings/app",
-		"controllers/pages/home"], function(FoldController, appRouter, layout, appConfig, homeController){
+		"controllers/pages/home",
+		"dev/controllers/data-binding"], function(FoldController, appRouter, layout, appConfig, homeController, dataBindingController){
 	
 	var AppController = FoldController.extend({
 
@@ -45,8 +46,10 @@ define(["fold/controller",
 			var appController 	= this,
 				controllersMap  = {
 					
-					"*path"	 : homeController,
-					""   	 : homeController					
+					"home"			: homeController,
+					"data-binding"	: dataBindingController,
+					"*path"	 		: dataBindingController,
+					""   	 		: dataBindingController					
 
 				},
 				loadModule = function(module, id, route){

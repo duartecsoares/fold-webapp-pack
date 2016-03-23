@@ -17,7 +17,7 @@ define(["backbone"], function(Backbone){
 
 			controller.on("controller:enable", function(){
 
-				var view = new viewObj.instance({ idView : viewObj.idView });
+				var view = new viewObj.instance(viewObj);
 
 				controller.trigger("app:load:view", view);
 				controller.view = view;

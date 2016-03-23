@@ -3,6 +3,7 @@
 *.scssc
 
 .sass-cache
+dev/
 css
 vendor
 node_modules
