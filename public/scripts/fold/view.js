@@ -91,13 +91,37 @@ define(["backbone",
 
 			bindedElements.map(function(index){
 
-				var element 		= bindedElements[index],
+				var diggIntoObject  = function(model, attributeMap){
+
+						var value 			= null,
+							levels 			= attributeMap.split("."),
+							numberOfLevels 	= levels.length - 1,
+							iterator 		= 0;
+
+						while(iterator <= numberOfLevels){
+
+							console.info(value)
+
+							value = (value) ? value[levels[iterator]] : model.attributes[levels[iterator]];
+							iterator += 1;
+
+						}
+
+						console.info("--- digging ------");
+						console.info("levels -", levels);
+						console.info("map -", attributeMap);
+						console.info("------------------");
+
+						return value;
+
+					},
+					element 		= bindedElements[index],
 					bindingAttr 	= element.getAttribute("data-binding"),
 					attributeValue 	= model.get(bindingAttr);
 
 				if(!(model.get(bindingAttr) instanceof Array)){
 
-					element.innerHTML = attributeValue;
+					element.innerHTML = diggIntoObject(model, bindingAttr);
 
 				}else{
 
