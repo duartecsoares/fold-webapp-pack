@@ -21,7 +21,15 @@ define(["backbone",
 					},
 					Model 	: function(Model){
 
+						var view = this;
+
 						this.model = (typeof Model === "function") ? new Model() : Model;
+						this.model.on("change", function(model){
+
+							view.automatedDataBinding(model);
+
+						});
+
 
 					},
 					children : function(children){
@@ -71,6 +79,46 @@ define(["backbone",
 			});			
 
 			if (typeof view.preparation === "function") view.preparation(options);
+
+		},
+
+		automatedDataBinding : function(model){
+
+			var view 	 		= this,
+				$viewElement 	= this.$el,
+				attributes 		= model.attributes,
+				bindedElements	= $viewElement.find("[data-binding]");
+
+			bindedElements.map(function(index){
+
+				var element 		= bindedElements[index],
+					bindingAttr 	= element.getAttribute("data-binding"),
+					attributeValue 	= model.get(bindingAttr);
+
+				if(!(model.get(bindingAttr) instanceof Array)){
+
+					element.innerHTML = attributeValue;
+
+				}else{
+
+					while (element.firstChild) {
+
+					    element.removeChild(element.firstChild);
+
+					}
+
+					attributeValue.map(function(item){
+
+						var spanElement = document.createElement("span");
+
+						spanElement.innerHTML = item;
+						element.appendChild(spanElement);
+
+					});
+
+				}
+
+			});
 
 		},
 
