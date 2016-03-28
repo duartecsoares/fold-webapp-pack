@@ -2,9 +2,13 @@
   "name": "fold-webApp-pack",
   "version": "0.0.1",
   "dependencies": {
+    "assert": "^1.3.0",
     "grunt": "^0.4.5",
     "grunt-complexity": "^0.3.0",
-    "grunt-contrib-watch": "^0.6.1"
+    "grunt-contrib-watch": "^0.6.1",
+    "jquery": "^2.2.2",
+    "requirejs": "^2.2.0",
+    "should": "^8.3.0"
   },
   "devDependencies": {
     "grunt": "^0.4.5",

@@ -1,9 +1,6 @@
-define(["backbone",
-		"layout",
-		"controllers/analytics",
-		"settings/app"], function(Backbone, layout, analytics, appConfig){
+define(["layout"], function(layout){
 	
-	var FoldView 		= Backbone.View.extend({
+	var FoldView = Backbone.View.extend({
 
 		initialize : function(options){
 
@@ -29,7 +26,6 @@ define(["backbone",
 							view.automatedDataBinding(model);
 
 						});
-
 
 					},
 					children : function(children){
@@ -436,8 +432,7 @@ define(["backbone",
 
 				var toTemplate = {
 
-					model : data || toObject,
-					appConfig : appConfig
+					model : data || toObject
 
 				};
 
@@ -446,7 +441,6 @@ define(["backbone",
 			}
 
 			view.trigger("view:render");
-			analytics.track(this);
 			view.active = true;
 
 			return view;

@@ -320,7 +320,7 @@ define(["backbone"], function(Backbone){
 
 			});
 
-			return layout;
+			return views;
 			
 		},
 
