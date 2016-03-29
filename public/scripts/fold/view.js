@@ -4,8 +4,15 @@ define(["layout"], function(layout){
 
 		initialize : function(options){
 
-			var view 		= this,
-				actions 	= {
+			var view 				= this,
+				automationType 		= options.dataAutomation || "directive",
+				dataAutomationTypes	= {
+
+					directive : view.directiveDataBinding,
+					render 	  : view.render
+
+				},
+				actions 			= {
 
 					idView 	: function(idView){
 
@@ -23,7 +30,7 @@ define(["layout"], function(layout){
 						this.model = (typeof Model === "function") ? new Model() : Model;
 						this.model.on("change", function(model){
 
-							view.automatedDataBinding(model);
+							dataAutomationTypes[automationType].call(view, model.toJSON(), true);
 
 						});
 
@@ -78,9 +85,10 @@ define(["layout"], function(layout){
 
 		},
 
-		automatedDataBinding : function(model){
+		directiveDataBinding : function(){
 
 			var view 	 		= this,
+				model 			= this.model,
 				$viewElement 	= this.$el,
 				attributes 		= model.attributes,
 				bindedElements	= $viewElement.find("[data-binding]");
@@ -96,19 +104,12 @@ define(["layout"], function(layout){
 
 						while(iterator <= numberOfLevels){
 
-							console.info(value)
-
 							value = (value) ? value[levels[iterator]] : model.attributes[levels[iterator]];
 							iterator += 1;
 
 						}
 
-						console.info("--- digging ------");
-						console.info("levels -", levels);
-						console.info("map -", attributeMap);
-						console.info("------------------");
-
-						return value;
+						return (value) ? value : "";
 
 					},
 					element 		= bindedElements[index],
@@ -153,7 +154,6 @@ define(["layout"], function(layout){
 		activate : function(){
 
 			this.$el.removeClass("view-deactivate");
-
 			this.trigger("view:status:change", "activate");
 
 		},
@@ -161,7 +161,6 @@ define(["layout"], function(layout){
 		deactivate : function(){
 
 			this.$el.addClass("view-deactivate");
-
 			this.trigger("view:status:change", "deactivate");
 
 		},

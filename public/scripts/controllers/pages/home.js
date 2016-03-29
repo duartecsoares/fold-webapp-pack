@@ -1,5 +1,7 @@
 define(["fold/controller",
-		"views/pages/home"], function(FoldController, HomeView){
+		"views/pages/home",
+		"fold/model",
+		"dev/views/data-binding-dev"], function(FoldController, HomeView, FoldModel, DataBindingViewDev){
 	
 	var HomeController = FoldController.extend({
 
@@ -7,6 +9,6 @@ define(["fold/controller",
 
 	});
 
-	return new HomeController({ viewObj: { instance: HomeView, idView: "home-page-view" }});
+	return new HomeController({ viewObj: { constructor: HomeView, idView: "home-page-view", children: [{ constructor: DataBindingViewDev, idView: "data-binding-dev-view", Model: FoldModel}]}});
 
 });

@@ -13,16 +13,30 @@ define(["backbone"], function(Backbone){
 
 		addViewControllerEvents : function(viewObj){
 
-			var controller  = this;
+			var controller    = this,
+				childrenViews = viewObj.children || [];
 
 			controller.on("controller:enable", function(){
 
-				var view = new viewObj.instance(viewObj);
+				var view = new viewObj.constructor(viewObj),
+					instancedChildrenViews = childrenViews.map(function(childrenViewOptions){
+
+					return new childrenViewOptions.constructor({ idView : childrenViewOptions.idView, Model: childrenViewOptions.Model });
+
+				});
+
+				view.children = instancedChildrenViews;
+
+				window.dev = {
+
+					view: view
+
+				}
 
 				controller.trigger("app:load:view", view);
 				controller.view = view;
 
-			});
+			});			
 
 		},
 

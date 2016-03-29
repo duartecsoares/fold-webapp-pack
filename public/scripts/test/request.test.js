@@ -6,7 +6,7 @@ define(["chai", "controllers/request"], function(chai, request){
 
 			it("should start http get request given an url", function(){
 
-				request.get();
+				//request.get();
 
 			});
 
