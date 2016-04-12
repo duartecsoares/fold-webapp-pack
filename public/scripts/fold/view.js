@@ -41,6 +41,7 @@ define(["layout",
 									var bindedData = {
 
 										model: model,
+										view : view,
 										value: model.get(key)
 
 									};
@@ -54,12 +55,8 @@ define(["layout",
 									});
 
 								}
-								console.info(key, "has changed");
-
 
 							});
-
-							console.info(eventName);
 
 						});
 

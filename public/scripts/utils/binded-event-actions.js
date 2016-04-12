@@ -2,9 +2,10 @@ define(["utils/tools"],function(tools){
 	
 	var BindedEventsHandlers = function(bindingDetails, $element, bindedData){
 
-		var bindedActions = {
+		var diggedValue = tools.diggIntoObject(bindedData.model.toJSON(), $element.attr("fold-binding")),
+			bindedActions = {
 
-			"value" : function(writeInHTML){
+			value : function(writeInHTML){
 
 				if (!writeInHTML) return;
 
@@ -12,7 +13,7 @@ define(["utils/tools"],function(tools){
 
 				if (!(value instanceof Array)) {
 
-					$element.html(tools.diggIntoObject(bindedData.model.toJSON(), $element.attr("fold-binding")));
+					$element.html(diggedValue);
 
 				}else{							
 
@@ -37,21 +38,21 @@ define(["utils/tools"],function(tools){
 		
 			},
 
-			"attributes" : function(listOfAttributes){
+			attributes : function(listOfAttributes){
 
 				listOfAttributes.map(function(key){
 
-					$element.attr(key, tools.diggIntoObject(bindedData.model.toJSON(), $element.attr("fold-binding")));
+					$element.attr(key, diggedValue);
 
 				});			
 
 			},
 
-			"class" : function(classConfig){
+			classToggler : function(classConfig){
 
-				var condition = classConfig.condition || function(){
+				var condition = classConfig.condition || function(model){
 
-					return (bindedData.value) ? true : false;
+					return (diggedValue) ? true : false;
 
 				};
 
@@ -66,23 +67,19 @@ define(["utils/tools"],function(tools){
 				}
 
 			},
-			"customAction" : function(action){
+			customAction : function(action){
 
-				if (typeof action === "function") action();
+				if (typeof action === "function") action(bindedData);
 
 			}
 
 		};
-
-		console.info("constructor", bindingDetails);
 
 		if (bindingDetails.actions) {
 
 			Object.keys(bindingDetails.actions).map(function(key){	
 
 				bindedActions[key](bindingDetails.actions[key]);
-
-				console.info("data binding on", key);
 
 			});
 
