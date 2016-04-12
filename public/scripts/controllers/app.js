@@ -13,6 +13,8 @@ define(["fold/controller",
 			this.startRouting();
 			Backbone.history.loadUrl();
 
+			window.homeController = homeController;
+
 		},
 
 		changeController : function(removeableModule){

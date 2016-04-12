@@ -1,17 +1,11 @@
-define(["layout"], function(layout){
+define(["layout",
+		"utils/binded-event-actions"], function(layout, BindedEventsActions){
 	
 	var FoldView = Backbone.View.extend({
 
 		initialize : function(options){
 
 			var view 				= this,
-				automationType 		= options.dataAutomation || "directive",
-				dataAutomationTypes	= {
-
-					directive : view.directiveDataBinding,
-					render 	  : view.render
-
-				},
 				actions 			= {
 
 					idView 	: function(idView){
@@ -25,14 +19,51 @@ define(["layout"], function(layout){
 					},
 					Model 	: function(Model){
 
-						var view = this;
+						var view  = this,
+							model = (typeof Model === "function") ? new Model({
 
-						this.model = (typeof Model === "function") ? new Model() : Model;
-						this.model.on("change", function(model){
+								description : "adsd",
+								link: { url : ""}
 
-							dataAutomationTypes[automationType].call(view, model.toJSON(), true);
+							}) : Model,
+							JSON  = (typeof model.toJSON === "function") ? model.toJSON() : model;
+
+						Object.keys(JSON).map(function(key){
+
+							var eventName = "change:" + key;
+
+							model.on(eventName, function(model){
+
+								var viewBindedEvents = view.bindedEvents || {};
+
+								if (viewBindedEvents[key]) {
+
+									var bindedData = {
+
+										model: model,
+										value: model.get(key)
+
+									};
+									
+									viewBindedEvents[key].map(function(bindingElement, index){
+
+										var $bindedElement = view.$el.find("[fold-binding='" + (viewBindedEvents[key][index].alias || key) + "']"),
+											$selectedElement = $($bindedElement.get(index)),
+											bindedEventsActions = new BindedEventsActions(viewBindedEvents[key][index], $selectedElement, bindedData);
+
+									});
+
+								}
+								console.info(key, "has changed");
+
+
+							});
+
+							console.info(eventName);
 
 						});
+
+						this.model = model;
 
 					},
 					children : function(children){
@@ -82,64 +113,6 @@ define(["layout"], function(layout){
 			});			
 
 			if (typeof view.preparation === "function") view.preparation(options);
-
-		},
-
-		directiveDataBinding : function(){
-
-			var view 	 		= this,
-				model 			= this.model,
-				$viewElement 	= this.$el,
-				attributes 		= model.attributes,
-				bindedElements	= $viewElement.find("[data-binding]");
-
-			bindedElements.map(function(index){
-
-				var diggIntoObject  = function(model, attributeMap){
-
-						var value 			= null,
-							levels 			= attributeMap.split("."),
-							numberOfLevels 	= levels.length - 1,
-							iterator 		= 0;
-
-						while(iterator <= numberOfLevels){
-
-							value = (value) ? value[levels[iterator]] : model.attributes[levels[iterator]];
-							iterator += 1;
-
-						}
-
-						return (value) ? value : "";
-
-					},
-					element 		= bindedElements[index],
-					bindingAttr 	= element.getAttribute("data-binding"),
-					attributeValue 	= model.get(bindingAttr);
-
-				if(!(model.get(bindingAttr) instanceof Array)){
-
-					element.innerHTML = diggIntoObject(model, bindingAttr);
-
-				}else{
-
-					while (element.firstChild) {
-
-					    element.removeChild(element.firstChild);
-
-					}
-
-					attributeValue.map(function(item){
-
-						var spanElement = document.createElement("span");
-
-						spanElement.innerHTML = item;
-						element.appendChild(spanElement);
-
-					});
-
-				}
-
-			});
 
 		},
 
@@ -219,14 +192,14 @@ define(["layout"], function(layout){
 		buttonsBinding : function(){
 
 			var view 		= this,
-				$buttons 	= view.$el.find("[data-button]"),
+				$buttons 	= view.$el.find("[fold-button]"),
 				sync 		= function(data, extra){
 
 					var status 	= data.split("->")[0] || null,
 						message = data.split("->")[1] || null,
-						text 	= message || $buttons.attr("data-button-" + status);
+						text 	= message || $buttons.attr("fold-button-" + status);
 
-					$buttons.attr("data-status", status);
+					$buttons.attr("fold-button-status", status);
 					
 					if($buttons.is("input")){
 
@@ -448,13 +421,12 @@ define(["layout"], function(layout){
 
 		destroy : function(){			
 			
+			Backbone.View.prototype.remove.call(this);
 			this.stopListening();			
             this.undelegateEvents();
             this.$el.removeData().unbind();
             this.remove();
-            Backbone.View.prototype.remove.call(this);
             this.active = false;
-
             this.trigger("view:destroy");
 
             return this;

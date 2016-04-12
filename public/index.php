@@ -48,8 +48,7 @@
         
         <noscript>
           <div class="unsupported">
-            <a href="http://madebyfold.com">
-              <img class="unsupported-logo" src="/resources/assets/header/logo.svg" alt="logo"> 
+            <a href="http://www.madebyfold.com"> 
               <span class="unsupported-name">Fold's WebApp Pack</span>
             </a>
             <p class="unsupported-paragraph">
@@ -63,7 +62,7 @@
         <!--[if lt IE 11]>
         
           <div class="unsupported jsonly">
-            <a href="http://madebyfold.com/">
+            <a href="http://www.madebyfold.com/">
               <img class="unsupported-logo" src="/resources/assets/header/logo.svg" alt="logo"> 
               <span class="unsupported-name"> Fold's WebApp Pack </span>
             </a>

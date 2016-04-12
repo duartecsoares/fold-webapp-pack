@@ -11,6 +11,28 @@ define(["backbone"], function(Backbone){
 
 		},
 
+		set: function(data, model, callback){
+
+			/*
+			
+				[{
+					value : "www.builditwith.me",
+					key : "link"
+
+				}]
+
+			*/
+
+			data.map(function(itemData){
+
+				model.set(itemData.key, itemData.value);
+
+			});
+
+			if (typeof callback === "function") callback();
+
+		},
+
 		addViewControllerEvents : function(viewObj){
 
 			var controller    = this,
