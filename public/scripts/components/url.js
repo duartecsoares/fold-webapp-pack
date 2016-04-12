@@ -1,6 +1,6 @@
-define(["fold/controller"], function(FoldController){
+define(["fold/component"], function(FoldComponent){
 
-	var UrlController = FoldController.extend({
+	var UrlComponent = FoldComponent.extend({
 
 		getFragment : function(){
 
@@ -62,6 +62,6 @@ define(["fold/controller"], function(FoldController){
 
 	});
 
-	return new UrlController();
+	return new UrlComponent();
 
 });

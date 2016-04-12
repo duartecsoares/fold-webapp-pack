@@ -1,8 +1,7 @@
-define(["fold/controller",
-		"settings/app",
-		"controllers/analytics"], function(FoldController, settings, analytics){
+define(["fold/component",
+		"settings/app"], function(FoldComponent, settings){
 	
-	var RequestController = FoldController.extend({
+	var RequestComponent = FoldComponent.extend({
 
 		initialize : function(){
 
@@ -54,7 +53,6 @@ define(["fold/controller",
 
 									controller.trigger("controller:" + serviceName + ":" + verb + ":end");
 									controller.trigger("request:" + serviceName + ":" + verb + ":end");
-
 									controller.trigger("request:end");
 									controller.trigger("app:versions:match", response.versions.app);
 
@@ -66,11 +64,9 @@ define(["fold/controller",
 
 									controller.trigger("controller:" + serviceName + ":" + verb + ":error", response);
 									controller.trigger("request:" + serviceName + ":" + verb + ":error", response);
-
 									controller.trigger("controller:" + serviceName + ":" + verb + ":end");
 									controller.trigger("request:" + serviceName + ":" + verb + ":end");
 									controller.trigger("request:end");
-
 									controller.trigger("request:error", response.status);
 
 									if (callback) callback(response.responseJSON);
@@ -82,7 +78,6 @@ define(["fold/controller",
 							controller.trigger("controller:" + serviceName + ":" + verb + ":start");
 							controller.trigger("request:" + serviceName + ":" + verb  + ":start");
 							controller.trigger("request:start");
-							analytics.send("[" + verb + "]" + serviceName, "Request");
 
 						return $request;
 
@@ -98,8 +93,6 @@ define(["fold/controller",
 
 	});
 
-	var request = new RequestController();
-
-	return request;
+	return new RequestComponent();
 
 });

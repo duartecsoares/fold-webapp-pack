@@ -2,7 +2,8 @@ define(["fold/controller",
 		"router",
 		"layout",
 		"settings/app",
-		"controllers/pages/home"], function(FoldController, appRouter, layout, appConfig, homeController){
+		"controllers/pages/home",
+		"components/request"], function(FoldController, appRouter, layout, appConfig, homeController, request){
 	
 	var AppController = FoldController.extend({
 
@@ -14,6 +15,7 @@ define(["fold/controller",
 			Backbone.history.loadUrl();
 
 			window.homeController = homeController;
+			window.request = request;
 
 		},
 
