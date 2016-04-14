@@ -5,11 +5,11 @@ define(["utils/tools"],function(tools){
 		var diggedValue = tools.diggIntoObject(bindedData.model.toJSON(), $element.attr("fold-binding")),
 			bindedActions = {
 
-			value : function(writeInHTML){
+			value : function(writeInHTML, $element){
 
 				if (!writeInHTML) return;
 
-				var value = bindedData.value;
+				var value = diggedValue;
 
 				if (!(value instanceof Array)) {
 
@@ -23,14 +23,28 @@ define(["utils/tools"],function(tools){
 
 					}
 
-					value.map(function(key){
+					value.map(function(itemObj, index){
 
-						var itemElement = tools.createElement(bindingDetails.arrayElementItem || "span");
+						var itemElement = tools.createElement(bindingDetails.arrayElementItem || "span"),
+							$itemElement = $(itemElement),
+							itemAttributes = itemObj.attributes || [],
+							itemClassList = itemObj.classList || [];
 
-						itemElement.setAttribute("fold-" + key + "-item", true);
-						itemElement.innerHTML = key;
+						$itemElement.attr("fold-" + bindedData.property + "-item", index);							
+						itemAttributes.map(function(key){
 
-						$element.append(itemElement);
+							$itemElement.attr(key, itemObj.value);
+
+						});
+
+						itemClassList.map(function(key){
+
+							itemElement.addClass(key);
+
+						});
+
+						$itemElement.html(itemObj.value);
+						$element.append($itemElement);
 
 					});
 
@@ -38,7 +52,7 @@ define(["utils/tools"],function(tools){
 		
 			},
 
-			attributes : function(listOfAttributes){
+			attributes : function(listOfAttributes, $element){
 
 				listOfAttributes.map(function(key){
 
@@ -48,7 +62,7 @@ define(["utils/tools"],function(tools){
 
 			},
 
-			classToggler : function(classConfig){
+			classToggler : function(classConfig, $element){
 
 				var condition = classConfig.condition || function(model){
 
@@ -79,7 +93,7 @@ define(["utils/tools"],function(tools){
 
 			Object.keys(bindingDetails.actions).map(function(key){	
 
-				bindedActions[key](bindingDetails.actions[key]);
+				bindedActions[key](bindingDetails.actions[key], $element);
 
 			});
 

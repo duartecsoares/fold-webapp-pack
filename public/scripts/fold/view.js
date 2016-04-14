@@ -23,7 +23,7 @@ define(["layout",
 							model = (typeof Model === "function") ? new Model({
 
 								description : "adsd",
-								link: { url : ""}
+								link: { url : "" }
 
 							}) : Model,
 							JSON  = (typeof model.toJSON === "function") ? model.toJSON() : model;
@@ -42,7 +42,8 @@ define(["layout",
 
 										model: model,
 										view : view,
-										value: model.get(key)
+										value: model.get(key),
+										property: (viewBindedEvents[key][0].alias || key)
 
 									};
 									
