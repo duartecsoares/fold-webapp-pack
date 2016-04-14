@@ -1,0 +1,187 @@
+<%
+	
+	var inputs 		= model.inputs || [],
+		hash 		= model.hash,
+		submit 		= model.submit,
+		className 	= model.className ? " " + model.className : "",
+		text 		= model.text;
+
+%>
+
+<% if(text){ %>
+	
+	<div class="paragraph form-copy-text"><%= text %></div>
+
+<% } %>
+
+<div class="form-wrap <%=className%>"><% 
+
+	inputs.map(function(input){
+
+		var value 			= ((input.type === "password") || (input.type === "not-password")) ? "" : _.escape(input.value),
+			tag 			= input.tag || "input",
+			endTagElement 	= (tag === "input") ? "" : "</" + tag + ">" ,
+			inputDataAttr 	= "data-form ",
+			liveEdit 		= input.liveEdit,
+
+			parentClass,
+			parentTag,
+			parentTagElement 	= "",
+			parentEndTagElement = "",
+
+			max,
+			maxValue,
+			labeltronicType,
+			questionLink;
+
+		if(input.label){
+				
+			if(input.label.labeltronic){
+
+				labeltronicType 	= input.label.labeltronic.type;
+				labeltronicQuestion = input.label.labeltronic.question;
+
+			} 
+
+		}
+
+		if(input.question){
+
+			questionLink = input.question.link;
+
+		}
+
+		if ( input.parent ) {
+			parentClass 		= input.parent.className ? " class=\""+input.parent.className+"\"" : "";
+			parentTag 			= input.parent.tag || "div";
+			parentTagElement 	= "<"+parentTag+parentClass+">";
+			parentEndTagElement = "</" + parentTag + ">";
+		}
+
+		if(input.data){
+
+			input.data.map(function(item){
+
+				inputDataAttr += item.name + "='" + item.value + "' ";
+
+			});
+
+			max = input.data[0].value.match(/max-(\d+)/gi),
+			maxValue = max ? max[0].split("max-")[1] : null;
+
+		} %>
+
+		<%= parentTagElement %>
+
+		<% if(input.label){ %> 
+
+			<label for="<%= input.id %>" class="<%= input.label.className %>">
+
+				<%=input.label.text%><% if(input.label.required){ %><span class="required">*</span><% } %>
+					
+				<% if(labeltronicType === "counter") { %>
+					
+				<span class="labeltronic" data-labeltronic="<%= input.label.labeltronic.name %>" data-labeltronic-type="<%= labeltronicType %>"><%= input.label.labeltronic.text %></span>
+
+				<% } else if(labeltronicType === "errorLink"){ %>
+
+				<a href="<%=input.label.labeltronic.link%>" rel="internal" class="labeltronic-error-link" data-labeltronic="<%=input.label.labeltronic.name%>" data-labeltronic-type="<%=labeltronicType%>" tabindex="-1"><%= input.label.labeltronic.text %><span class="chevron"></span></a>
+
+				<% } %>
+
+			</label> 
+
+		<% } %>
+		
+		<div class="base-tooltip" data-tooltip="error">
+
+			<% if(input.pseudoLabel) { %>
+
+			<div class="input-wrapper <%=input.pseudoLabel.className || '' %>">
+
+				<label for="<%= input.id %>" class="pseudo-label"><%=input.pseudoLabel.text%></label>
+				<input id="<%= input.id %>" class="input-transparent <%if(input.formCheck){%>form-check-padding<%}%>" type="<%= input.type %>" name="<%= input.name %>" placeholder="<%= input.placeholder %>" value ="<%= input.value %>" <%if(maxValue){%>maxlength="<%=maxValue%>"<%}%> <%=inputDataAttr%> <%if(liveEdit){%>data-live-edit=true<%}%>>
+				<div class="pseudo-input input text full">&nbsp;</div>
+
+				<%if(input.formCheck){%> <label for="<%= input.id %>" class="form-check" data-check-valid=""></label> <%}%>
+
+			</div>
+
+			<% } else { %>
+
+			<%= "<" + tag %> id="<%= input.id %>" name="<%= input.name %>" type="<%= input.type %>" <% if(input.type === "password"){  %> autocomplete="off" <% } %> class="<%= input.className %> <%if(input.data){%><%=input.data[0].value%><%}%> <%if(input.formCheck){%>form-check-padding<%}%> <%if(questionLink){%>form-question-padding<%}%>" placeholder="<%= input.placeholder %>" value ="<%= value %>" <%if(maxValue && tag !== "textarea"){%>maxlength="<%=maxValue%>"<%}%> <%if(liveEdit){%>data-live-edit=true<%}%> <%if(labeltronicType){%>data-labeltronic-type="<%= labeltronicType %>"<%}%> <%if(questionLink){%>data-question-type="<%= input.question.type %>"<%}%> <%= inputDataAttr + ">" %><% if(tag === "textarea"){ %><%= value %><% } %><%= endTagElement %>
+			
+			<%if(input.formCheck){%> 
+
+				<label for="<%= input.id %>" class="form-check" data-check-valid=""></label>
+
+			<%}%>
+
+			<%if(questionLink){%>
+
+				<a href="<%=questionLink%>" rel="internal" class="form-question" data-question="<%=input.question.name%>" data-question-type="<%=input.question.type%>" tabindex="-1"></a>
+
+			<% }
+
+			} %>
+
+		</div>
+
+		<%= parentEndTagElement %>
+
+	<% });
+
+	%></div><%
+
+	if ( hash ) { %>
+
+	<input type="hidden" name="hashString" value="<%=hash%>">
+
+	<% }
+
+	if(submit){
+
+		var dataAttr = "",
+			parentClass,
+			parentTag,
+			parentTagElement 	= "",
+			parentEndTagElement = "";
+
+		if (submit.parent){
+			parentClass 		= submit.parent.className ? " class=\""+submit.parent.className+"\"" : "";
+			parentTag 			= submit.parent.tag || "div";
+			parentTagElement 	= "<"+parentTag+parentClass+">";
+			parentEndTagElement = "</" + parentTag + ">";
+		}
+
+		if(submit.data){
+
+			submit.data.map(function(item){
+
+				dataAttr += item.name + "='" + item.value + "' ";
+
+			});
+
+		}
+
+		%>
+		<div class="form-input <%=className%>">
+		<%= parentTagElement %>
+		
+		<% if(submit.tag === "button"){
+
+			%><button name="<%= submit.name %>" type="submit" class="<%= submit.className %>" <%= dataAttr %>><%= submit.text %></button><%
+
+		}else{
+
+			%><input name="<%= submit.name %>" type="submit" class="<%= submit.className %>" value ="<%= submit.text %>" <%= dataAttr %>><%
+
+		} %>
+
+		<%= parentEndTagElement %>
+		</div>
+		<%
+
+	}
+
+%>

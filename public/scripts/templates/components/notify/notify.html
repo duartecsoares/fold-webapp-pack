@@ -1,0 +1,8 @@
+<!--<p><%= model.message || "unknown" %> - <%= model.type || "unknown" %> #<%= model.id || "unknown" %></p>-->
+
+<h3 class="notify-title"><%= model.message || "sorry, we had an issue" %></h3>
+<% if(!model.sticky){ %>
+
+	<a href="" class="close" data-action="close"></a>
+
+<% } %>

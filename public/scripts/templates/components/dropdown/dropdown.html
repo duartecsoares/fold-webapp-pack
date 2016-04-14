@@ -1,0 +1,16 @@
+<% 
+
+if(model.length > 0){
+
+	model.map(function(item){ %>
+
+ 	<% var type = (item.type !== "button") ? "a" : "button" %>
+
+	<li class="dropdown-item <%=item.addClass || ''%>">
+		<a <% if(type === "a") { %> href="<%= item.href %>" <% } %> rel="<%= item.rel %>" data-action="<%= item.action %>" class="dropdown-link <%if(item.selected){%>selected<%}%>"><%= item.label %></a>
+	</li>
+
+<% }); 
+
+}
+%>

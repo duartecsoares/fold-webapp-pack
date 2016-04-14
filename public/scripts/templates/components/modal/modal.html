@@ -1,0 +1,41 @@
+<div class="modal-bg"></div>
+
+<div class="modal-box">
+	
+	<div class="modal-dialog">
+
+		<% if(model.title){ 
+
+			if(model.backgroundHeader){
+
+
+
+				var image = model.backgroundHeader,
+				extension = image.substr(image.lastIndexOf('.')),
+				imageNoExtension = image.substr(0, image.length - extension.length),
+				imageBlur = imageNoExtension + "_blur" + extension; 
+				
+			} %>
+		
+			<div class="header-wrap" <% if(model.backgroundHeader){%>style="background-image: url('<%=imageBlur%>');"<% } %> >
+	
+				<div class="header-avatar-wrap">
+
+					<div class="avatar circle big" <% if(model.thumb){ %> style="background-image: url('<%= model.thumb %>');" <% } %>>
+					</div>
+
+				</div>
+
+				<h5 class="heading smallest"><%= model.title %></h5>
+				
+			</div>
+
+		<% } %>
+		
+		<a href="javascript:;" class="close" data-action="close"></a>
+
+		<div class="dialog-content" data-target-ref="modal-wrapper"></div>
+
+	</div>
+ 	
+</div>

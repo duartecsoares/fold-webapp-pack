@@ -1,0 +1,29 @@
+<% if(model.images){ %>
+
+<div class="filter-wrapper dark-cover" data-action="filter-wrapper">
+	
+		<div class="cover-image" <%if(model.cover){%>style="background-image:url(<%=model.cover%>)"<%}%>>
+			
+			<canvas class="cover-canvas"></canvas>
+
+		</div>
+	
+</div>
+
+<div class="row enable-xlarge <%if(model.images_count<3){%>center-columns<%}%>">
+
+<% model.images.map(function(image, index){ %><div class="column small-12 medium-6 large-4 xlarge-3">
+		
+		<div class="card gallery" data-gallery="<%=index%>">
+
+			<div class="card-main-content card-image" style="background-image: url('<%= image.image %>');"></div>
+		
+		</div>
+
+		<!-- <div class="paragraph"> <%=image.description%> </div> -->
+
+	</div><% }); %>
+
+</div>
+
+<% } %>
