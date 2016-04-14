@@ -1,5 +1,5 @@
 define(["fold/view",
-		"text!templates/gallery/gallery.html",
+		"text!templates/components/gallery/gallery.html",
 		"views/modal/modal",
 		"views/gallery/image",
 		"layout",

@@ -1,5 +1,5 @@
 define(["fold/view",
-		"text!templates/dropdown/dropdown.html",
+		"text!templates/components/dropdown/dropdown.html",
 		"layout"], function(FoldView, template, layout){
 	
 	var DropdownView = FoldView.extend({

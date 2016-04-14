@@ -25,7 +25,6 @@ define(["fold/view",
         open : function(target){
 
         	layout.add([this], target);
-
             layout.trigger("layout:dropdown:close", this.idView);
 
         },

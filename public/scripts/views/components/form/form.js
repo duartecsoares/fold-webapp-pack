@@ -1,6 +1,6 @@
 define(["fold/view",
 		"controllers/request",
-		"text!templates/form/form.html",
+		"text!templates/components/form/form.html",
 		"json!data/forms/messages.json"], function(FoldView, request, template, messages){
 	
 	var checkInUseTimeOut,

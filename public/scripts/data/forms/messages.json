@@ -1,0 +1,11 @@
+{
+
+	"max" 		: "%f cant have more than %p1 characters",
+	"min" 		: "%f must have at least %p1 characters",
+	"number"	: "Value must be a number",
+	"required" 	: "%f is required",
+	"email" 	: "Must be valid email",
+	"username" 	: "(a-z) and (0-9) characters only",
+	"equalTo" 	: "%f must be equal to %p1",
+	"domain"	: "invalid url"
+}
