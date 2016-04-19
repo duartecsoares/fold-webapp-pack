@@ -81,7 +81,7 @@ define(["utils/tools"],function(tools){
 				}
 
 			},
-			customAction : function(action){
+			custom : function(action){
 
 				if (typeof action === "function") action(bindedData);
 

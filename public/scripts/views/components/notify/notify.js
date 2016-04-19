@@ -5,7 +5,7 @@ define(["fold/view",
 		className: "notify",
 		template: _.template(template),
 
-		preparation : function(){
+		setup : function(){
 
 			this.on("view:render", this.addEvents);
 

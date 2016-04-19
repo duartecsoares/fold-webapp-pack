@@ -8,7 +8,7 @@ define(["fold/view",
 		tagName : "ul",
 		className : "dropdown",
 
-		preparation :  function(options){
+		setup :  function(options){
 
 			var view = this;
 

@@ -1,16 +1,16 @@
-define(["layout",
-		"utils/binded-event-actions"], function(layout, BindedEventsActions){
+define(["utils/binded-event-actions"], function(BindedEventsActions){
 	
 	var FoldView = Backbone.View.extend({
 
 		initialize : function(options){
 
 			var view 				= this,
+				options 			= options || {},
 				actions 			= {
 
 					idView 	: function(idView){
 
-						if(!idView) throw new Error("View created without an IdView.");
+						if(!idView) throw new Error("FoldView created without an IdView.");
 
 						this.$el.attr("data-view", idView);
 						this.idView = idView;
@@ -92,7 +92,7 @@ define(["layout",
 
 					}
 
-				};
+				};			
 
 			Object.keys(options).map(function(key){
 
@@ -110,7 +110,7 @@ define(["layout",
 
 			});			
 
-			if (typeof view.preparation === "function") view.preparation(options);
+			if (typeof view.setup === "function") view.setup(options);
 
 		},
 
@@ -141,7 +141,7 @@ define(["layout",
 			var view 			= this,
 				executeRoute	= function(e){
 
-					if (e.shiftKey || e.ctrlKey || layout.cmdKeyPressed) {
+					if (e.shiftKey || e.ctrlKey) { //todo: fix solution for macosx cmd key
 
 						return true;
 
@@ -159,7 +159,7 @@ define(["layout",
 				},
 				executeRouteSilent	= function(e){
 					
-					if (e.shiftKey || e.ctrlKey || layout.cmdKeyPressed) {
+					if (e.shiftKey || e.ctrlKey) {
 
 						return true;
 
@@ -181,7 +181,7 @@ define(["layout",
 			view.$el.find("[data-click='log-in']").on("click", function(e){
 
 				e.preventDefault();
-				layout.trigger("login-open");
+				//layout.trigger("login-open");
 
 			});
 
@@ -305,7 +305,6 @@ define(["layout",
 				destroyView = function(){
 
 					this.trigger("view:destroy");
-
 		            this.stopListening();			
             		this.undelegateEvents();
             		this.$el.removeData().unbind();
@@ -322,7 +321,7 @@ define(["layout",
 				view.listenToOnce(view, "view:render", function(){
 
 					addAfterRenderClass();
-					view.listenTo(layout, "layout:scroll", toggleInViewportClass);
+					//view.listenTo(layout, "layout:scroll", toggleInViewportClass);
 					view.listenToOnce(view, "view:destroy", removeAfterRenderClass);
 
 				});
@@ -334,7 +333,6 @@ define(["layout",
 					$target.one(transitionEvent, function(){												
 
 						destroyView.call(view);
-						
 						view.$el.removeClass(classesList.beforeDestroy);
 
 					});

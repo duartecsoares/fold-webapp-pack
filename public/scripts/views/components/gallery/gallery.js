@@ -10,7 +10,7 @@ define(["fold/view",
 		template: _.template(template),
 		className : "gallery-cover page-cover",
 
-		preparation : function(){
+		setup : function(){
 
 			this.on("view:render", this.addEvents);
 

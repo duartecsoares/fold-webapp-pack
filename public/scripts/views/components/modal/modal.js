@@ -9,7 +9,7 @@ define(["fold/view",
 		template	: _.template(template),
 		isAnimated 	: true,
 
-		preparation : function(){
+		setup : function(){
 
 			this.on("view:render", this.addEvents);			
 

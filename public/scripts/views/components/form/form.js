@@ -10,7 +10,7 @@ define(["fold/view",
 		className: "form",
 		template: _.template(template),
 
-		preparation : function(opt){
+		setup : function(opt){
 
 			this.on("view:render", this.addEvents);
 

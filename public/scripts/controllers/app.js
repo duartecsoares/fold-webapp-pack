@@ -3,7 +3,7 @@ define(["fold/controller",
 		"layout",
 		"settings/app",
 		"controllers/pages/home",
-		"components/request"], function(FoldController, appRouter, layout, appConfig, homeController, request){
+		"dev/controllers/tour-intro"], function(FoldController, appRouter, layout, appConfig, homeController, introTour){
 	
 	var AppController = FoldController.extend({
 
@@ -14,8 +14,7 @@ define(["fold/controller",
 			this.startRouting();
 			Backbone.history.loadUrl();
 
-			window.homeController = homeController;
-			window.request = request;
+			console.info(introTour);
 
 		},
 
@@ -49,8 +48,10 @@ define(["fold/controller",
 			var appController 	= this,
 				controllersMap  = {
 					
+					
 					"*path"	 		: homeController,
-					""   	 		: homeController					
+					"intro" 		: introTour,
+					""   	 		: homeController
 
 				},
 				loadModule = function(module, id, route){
@@ -81,6 +82,8 @@ define(["fold/controller",
 
 					});
 */
+					console.info("enabling", module);
+
 					appController.management.moduleEnable = module.enable(id);					
 
 				};

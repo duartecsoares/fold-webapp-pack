@@ -6,7 +6,7 @@ define(["fold/view",
         className : "floating-view",
         isAnimated: true,
 
-        preparation : function(options){
+        setup : function(options){
 
             var view = this;
 
