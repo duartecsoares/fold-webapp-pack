@@ -13,6 +13,14 @@ define(["fold/controller"], function(FoldController){
 			this.on("controller:enable", function(){
 
 				tour.generateSteps(tourData);
+				
+
+			});
+
+			this.on("controller:load:view", function(){
+
+				console.warn("B");
+				tour.addActionEvents();
 
 			});
 

@@ -58,7 +58,7 @@ define(["fold/controller",
 
 					appController.changeController(lastModule);
 
-					layout.listenTo(module, "app:load:view", function(moduleView){
+					layout.listenTo(module, "controller:load:view", function(moduleView){
 
 						if (lastModule){
 

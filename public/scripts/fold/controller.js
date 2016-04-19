@@ -48,17 +48,12 @@ define(["backbone"], function(Backbone){
 				});
 
 				view.children = instancedChildrenViews;
-
-				window.dev = {
-
-					view: view
-
-				}
-
-				controller.trigger("app:load:view", view);
+				
 				controller.view = view;
+				controller.trigger("controller:load:view", view);
 
-				console.warn(view);
+				console.warn("A");
+				console.info(controller);
 
 			});			
 
