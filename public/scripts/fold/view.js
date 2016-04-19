@@ -12,7 +12,9 @@ define(["utils/binded-event-actions"], function(BindedEventsActions){
 
 						if(!idView) throw new Error("FoldView created without an IdView.");
 
-						this.$el.attr("data-view", idView);
+						idView = "fold-" + idView;
+
+						this.$el.attr("fold-view", idView);
 						this.idView = idView;
 						this.$el.addClass(idView);
 
@@ -146,6 +148,8 @@ define(["utils/binded-event-actions"], function(BindedEventsActions){
 						return true;
 
 					}else{
+
+						console.info("executing route");
 
 						e.preventDefault();
 						

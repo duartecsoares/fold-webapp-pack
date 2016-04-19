@@ -1,5 +1,5 @@
 define(["fold/view",
-		"text!templates/notify/notify.html"], function(FoldView, template){
+		"text!templates/components/notify/notify.html"], function(FoldView, template){
 	
 	var NotifyView = FoldView.extend({
 		className: "notify",

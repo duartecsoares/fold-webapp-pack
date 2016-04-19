@@ -1,5 +1,5 @@
 define(["fold/view",
-		"text!templates/modal/modal.html",
+		"text!templates/components/modal/modal.html",
 		"layout"], function(FoldView, template, layout){
 	
 	var ModalView = FoldView.extend({
@@ -11,7 +11,7 @@ define(["fold/view",
 
 		setup : function(){
 
-			this.on("view:render", this.addEvents);			
+			this.on("view:render", this.addEvents);
 
 		},
 

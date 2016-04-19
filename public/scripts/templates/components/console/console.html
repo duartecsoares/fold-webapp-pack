@@ -1,0 +1,11 @@
+<h5 class="title">Console</h5>
+<div class="console-stat"> active views - <%= model.activeViews %> </div>
+<div>
+		
+	<% Object.keys(model.views).map(function(key){ %>
+
+		<%= model.views[key].idView  + " - "%>
+
+	<%	}); %>
+
+</div>

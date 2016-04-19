@@ -21,14 +21,14 @@ RewriteRule ^(.*)$ /#$1 [R=301,L,NE]
 #
 # list of social share
 # 
-RewriteCond %{HTTP_USER_AGENT} (googlebot|facebook|bingbot|yahoo|twitter) [NC]
-RewriteRule ^people/(.*)$ /social.php?req=people&id=$1 [R=301,L]
-RewriteRule ^profile/(.*)$ /social.php?req=people&id=$1 [R=301,L]
-RewriteRule ^ideas/(.*)$ /social.php?req=idea&id=$1 [R=301,L]
-RewriteRule ^about /social.php?req=about [R=301,L]
-RewriteRule ^ideas /social.php?req=idea [R=301,L]
-RewriteRule ^people /social.php?req=people [R=301,L]
-RewriteRule ^signup /social.php?req=signup [R=301,L]
+#RewriteCond %{HTTP_USER_AGENT} (googlebot|facebook|bingbot|yahoo|twitter) [NC]
+#RewriteRule ^people/(.*)$ /social.php?req=people&id=$1 [R=301,L]
+#RewriteRule ^profile/(.*)$ /social.php?req=people&id=$1 [R=301,L]
+#RewriteRule ^ideas/(.*)$ /social.php?req=idea&id=$1 [R=301,L]
+#RewriteRule ^about /social.php?req=about [R=301,L]
+#RewriteRule ^ideas /social.php?req=idea [R=301,L]
+#RewriteRule ^people /social.php?req=people [R=301,L]
+#RewriteRule ^signup /social.php?req=signup [R=301,L]
 
 ErrorDocument 404 /404.php
 ErrorDocument 403 /404.php

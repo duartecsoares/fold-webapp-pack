@@ -1,7 +1,7 @@
-define(["fold/component",
-		"settings/app"], function(FoldComponent, settings){
+define(["fold/module",
+		"settings/app"], function(FoldModule, settings){
 	
-	var RequestComponent = FoldComponent.extend({
+	var RequestModule = FoldModule.extend({
 
 		initialize : function(){
 
@@ -93,6 +93,6 @@ define(["fold/component",
 
 	});
 
-	return new RequestComponent();
+	return new RequestModule();
 
 });

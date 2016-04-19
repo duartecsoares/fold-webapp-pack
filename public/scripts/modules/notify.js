@@ -1,11 +1,11 @@
-define(["fold/controller",
+define(["fold/module",
 		"collections/notify",
 		"views/notify/notify",
-		"layout"], function(FoldController, NotifyCollection, NotifyView, layoutController){
+		"layout"], function(FoldModule, NotifyCollection, NotifyView, layoutController){
 
 	var notifyInterval,
 		suppressInterval,
-		NotifyController = FoldController.extend({
+		NotifyModule = FoldModule.extend({
 
 		initialize : function(){
 
@@ -93,8 +93,6 @@ define(["fold/controller",
 
 	});
 
-	var notify = new NotifyController();
-
-	return notify;
+	return new NotifyModule();
 
 });

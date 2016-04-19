@@ -9,6 +9,6 @@ define(["fold/controller",
 
 	});
 
-	return new HomeController({ viewObj: { constructor: HomeView, idView: "home-page-view", children: [{ constructor: DataBindingViewDev, idView: "data-binding-dev-view", Model: FoldModel}]}});
+	return new HomeController({ viewDetails: { constructor: HomeView, idView: "home-page-view", children: [{ constructor: DataBindingViewDev, idView: "data-binding-dev-view", Model: FoldModel}]}});
 
 });

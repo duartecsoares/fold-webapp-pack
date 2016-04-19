@@ -5,9 +5,9 @@ define(["backbone"], function(Backbone){
 		initialize : function(opt){
 
 			opt = opt || {};
-
-			if (typeof this.setup === "function") this.setup();
-			if (this.type === "page-controller") this.addViewControllerEvents(opt.viewObj);
+			
+			if (typeof this.setup === "function") this.setup();			
+			if ((this.type === "page-controller") || (this.type === "tour-controller")) this.addViewControllerEvents(opt.viewDetails);			
 
 		},
 
@@ -33,14 +33,14 @@ define(["backbone"], function(Backbone){
 
 		},
 
-		addViewControllerEvents : function(viewObj){
+		addViewControllerEvents : function(viewDetails){
 
 			var controller    = this,
-				childrenViews = viewObj.children || [];
+				childrenViews = viewDetails.children || [];
 
 			controller.on("controller:enable", function(){
 
-				var view = new viewObj.constructor(viewObj),
+				var view = new viewDetails.constructor(viewDetails),
 					instancedChildrenViews = childrenViews.map(function(childrenViewOptions){
 
 					return new childrenViewOptions.constructor({ idView : childrenViewOptions.idView, Model: childrenViewOptions.Model });
@@ -57,6 +57,8 @@ define(["backbone"], function(Backbone){
 
 				controller.trigger("app:load:view", view);
 				controller.view = view;
+
+				console.warn(view);
 
 			});			
 

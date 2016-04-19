@@ -1,6 +1,6 @@
 define(["fold/controller",
 		"layout",
-		"views/console/console"], function(FoldController, layout, consoleView){
+		"views/components/console/console"], function(FoldController, layout, consoleView){
 	
 	var Console = FoldController.extend({
 
