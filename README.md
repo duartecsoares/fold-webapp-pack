@@ -5,7 +5,7 @@
 
 Pack with tools for building web applications.
 
-#### Tecnologies
+#### Dependecies
 
 * Backbone
 	* Jquery
