@@ -2,8 +2,7 @@ define(["fold/controller",
 		"router",
 		"layout",
 		"settings/app",
-		"controllers/pages/home",
-		"dev/controllers/tour-intro"], function(FoldController, appRouter, layout, appConfig, homeController, introTour){
+		"controllers/pages/home"], function(FoldController, appRouter, layout, appConfig, homeController){
 	
 	var AppController = FoldController.extend({
 
@@ -48,7 +47,6 @@ define(["fold/controller",
 					
 					
 					"*path"	 		: homeController,
-					"intro" 		: introTour,
 					""   	 		: homeController
 
 				},
@@ -70,17 +68,6 @@ define(["fold/controller",
 						layout.add([moduleView], layout.base.container);					
 
 					});
-/*
-					layout.listenTo(module, "app:swap:view", function(moduleView){									
-
-							if(module.view) layout.remove(module.view.idView);
-
-							module.view = moduleView;
-							layout.add([moduleView], layout.base.container);
-
-					});
-*/
-					console.info("enabling", module);
 
 					appController.management.moduleEnable = module.enable(id);					
 

@@ -52,9 +52,6 @@ define(["backbone"], function(Backbone){
 				controller.view = view;
 				controller.trigger("controller:load:view", view);
 
-				console.warn("A");
-				console.info(controller);
-
 			});			
 
 		},

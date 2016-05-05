@@ -2,7 +2,7 @@
 
 requirejs.config({
 
-    baseUrl : "../public/scripts/",
+    baseUrl : "/scripts/",
 
 	paths : {
 
