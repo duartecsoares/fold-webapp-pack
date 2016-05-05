@@ -1,4 +1,4 @@
-define(["chai", "controllers/request"], function(chai, request){
+define(["chai", "modules/request"], function(chai, request){
 
 	describe("Request Controller", function(){
 

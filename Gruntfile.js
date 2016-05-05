@@ -82,8 +82,32 @@ module.exports = function(grunt){
 
 		"bower-install-simple": {
 
-	       directory : "vendor"
-	
+	        options: {
+
+	            color: true,
+	            directory: "vendor"
+
+	        },
+
+	        "prod": {
+
+	            options: {
+
+	                production: true
+
+	            }
+	        },
+
+	        "dev": {
+
+	            options: {
+
+	                production: false
+
+	            }
+
+	        }
+	        
 	    },
 
 		sass: {
