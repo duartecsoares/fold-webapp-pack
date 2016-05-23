@@ -1,0 +1,19 @@
+<snippet>
+	<content><![CDATA[
+define(["fold/controller",
+		"views/pages/example",
+		"views/example/example-child",
+		"models/example/model"], function(FoldController, ExampleView, ExampleChildView, ExampleModel){
+	
+	var ExampleController = FoldController.extend({
+
+		type: "page-controller",
+
+	});
+
+	return new ExampleController({ viewDetails: { constructor: ExampleView, idView: "example-page-view", children: [{ constructor: ExampleChildView, idView: "example-child-view", Model: ExampleModel }]}});
+
+});
+]]></content>
+	<tabTrigger>foldcontroller</tabTrigger>
+</snippet>

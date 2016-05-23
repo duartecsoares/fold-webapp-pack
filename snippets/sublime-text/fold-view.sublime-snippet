@@ -1,0 +1,23 @@
+<snippet>
+	<content><![CDATA[
+define(["fold/view",
+		"text!templates/example/example.html"], function(FoldView, template){
+	
+	var ExampleView = FoldView.extend({
+
+		template: _.template(template),
+
+		setup: function(){
+
+			/* setup fn serves as an specific initializer */
+
+		}
+
+	});
+
+	return ExampleView;
+
+});
+]]></content>
+	<tabTrigger>foldview</tabTrigger>
+</snippet>

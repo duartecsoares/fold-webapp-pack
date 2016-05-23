@@ -2,7 +2,8 @@ define(["fold/controller",
 		"router",
 		"layout",
 		"settings/app",
-		"controllers/pages/home"], function(FoldController, appRouter, layout, appConfig, homeController){
+		"controllers/pages/home",
+		"controllers/pages/features"], function(FoldController, appRouter, layout, appConfig, homeController, featuresController){
 	
 	var AppController = FoldController.extend({
 
@@ -45,8 +46,8 @@ define(["fold/controller",
 			var appController 	= this,
 				controllersMap  = {
 					
-					
 					"*path"	 		: homeController,
+					"features" 		: featuresController,
 					""   	 		: homeController
 
 				},

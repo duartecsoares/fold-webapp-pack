@@ -9,7 +9,6 @@ requirejs.config({
         "jquery" : "../vendor/jquery/dist/jquery",
         "backbone" : "../vendor/backbone/backbone",
         "underscore" : "../vendor/underscore/underscore",
-        "colorThief" : "../vendor/color-thief-umd/src/color-thief",
         "text" : "../vendor/requirejs-text/text",
         "json" : "../vendor/requirejs-plugins/src/json"
 
@@ -18,7 +17,7 @@ requirejs.config({
     shim: {
 
         "backbone": {
-            deps: ["underscore", "jquery", "text", "json", "colorThief"],
+            deps: ["underscore", "jquery", "text", "json"],
             exports: "Backbone"
         },
         "jquery" : {
@@ -29,10 +28,6 @@ requirejs.config({
         },
         "json": {
             deps: ["text"]
-        },
-
-        "colorThief": {
-            exports: "colorThief"
         }
     },
 
