@@ -1,6 +1,5 @@
 *.DS_Store
 *.log
-*.scssc
 
 .sass-cache
 dev/
