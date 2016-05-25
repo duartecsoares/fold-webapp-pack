@@ -1,0 +1,148 @@
+// fold _functions.css
+
+//function to set
+@function setHeadingsFontSize($biggest:null, $big:null, $medium:null, $small:null, $smallest:null){
+
+	@if not($biggest){
+		
+		$biggest-multiplier: 4.2;
+		$biggest: $sk-base-font-size * $biggest-multiplier;
+	}
+
+	@if not($big){
+
+		$big-multiplier: 3.2;
+		$big: $sk-base-font-size * $big-multiplier;
+
+	}
+
+	@if not($medium){
+		
+		$medium-multiplier: 2.2;
+		$medium: $sk-base-font-size * $medium-multiplier;
+
+	}
+
+	@if not($small){
+		
+		$small-multiplier: 1.2;
+		$small: $sk-base-font-size * $small-multiplier;
+
+	}
+
+	@if not($smallest){
+
+		$smallest-multiplier: 0.9;
+		$smallest: $sk-base-font-size * $smallest-multiplier;
+
+	}
+
+	@return $biggest, $big, $medium, $small, $smallest;
+
+}
+
+@function setHeadingsGutter($biggest:null, $big:null, $medium:null, $small:null, $smallest:null){
+
+	@if not($biggest){
+		
+		$biggest-multiplier: 1.4;
+		$biggest: $sk-base-font-size * $biggest-multiplier;
+	}
+
+	@if not($big){
+
+		$big-multiplier: 1.2;
+		$big: $sk-base-font-size * $big-multiplier;
+
+	}
+
+	@if not($medium){
+		
+		$medium-multiplier: 1;
+		$medium: $sk-base-font-size * $medium-multiplier;
+
+	}
+
+	@if not($small){
+
+		$small-multiplier: 0.9;
+		$small: $sk-base-font-size * $small-multiplier;
+
+	}
+
+	@if not($smallest){
+
+		$smallest-multiplier: 0.9;
+		$smallest: $sk-base-font-size * $smallest-multiplier;
+
+	}
+
+	@return $biggest, $big, $medium, $small, $smallest;
+
+}
+
+
+// Tint and shade alternatives to lighten and darken
+
+// Add percentage of white to a color
+@function tint($color, $percent){
+  @return mix(white, $color, $percent);
+}
+ 
+// Add percentage of black to a color
+@function shade($color, $percent){
+  @return mix(black, $color, $percent);
+}
+
+
+@function layer-bg() {
+	$layer-bg-increment: $layer-bg-increment + 1 !global;
+	$index: $layer-bg + $layer-bg-increment;	
+	@debug $index;
+	@return $index;
+}
+
+@function layer0() {
+	$layer0-increment: $layer0-increment + 1 !global;
+	$index: $layer0 + $layer0-increment;	
+	@debug $index;
+	@return $index;
+}
+
+@function layer1() {
+	$layer1-increment: $layer1-increment + 1 !global;
+	$index: $layer1 + $layer1-increment;	
+	@debug $index;
+	@return $index;
+}
+
+@function layer2() {
+	$layer2-increment: $layer2-increment + 1 !global;
+	$index: $layer2 + $layer2-increment;	
+	@debug $index;
+	@return $index;
+}
+
+@function layer3() {
+	$layer3-increment: $layer3-increment + 1 !global;
+	$index: $layer3 + $layer3-increment;	
+	@debug $index;
+	@return $index;
+}
+
+@function layer4() {
+	$layer4-increment: $layer4-increment + 1 !global;
+	$index: $layer4 + $layer4-increment;	
+	@debug $index;
+	@return $index;
+}
+
+
+
+
+
+
+
+
+
+

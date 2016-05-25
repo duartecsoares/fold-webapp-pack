@@ -1,0 +1,46 @@
+//style testing
+//only code goes here
+
+//validation headings sizes
+$val_heading: "could be wrong";	
+$val_heading_check: "headings: check";
+		
+@if $sk-heading-biggest-size <= $sk-heading-big-size or $sk-heading-biggest-size <= $sk-heading-medium-size or $sk-heading-biggest-size <= $sk-heading-small-size or $sk-heading-biggest-size <= $sk-heading-small-size {
+
+	$val_heading_check: "headings didnt pass!";
+	@debug "$sk-heading-biggest-size " + $val_heading;
+
+}
+
+@if $sk-heading-big-size >= $sk-heading-biggest-size or $sk-heading-big-size <= $sk-heading-medium-size or $sk-heading-big-size <= $sk-heading-small-size or $sk-heading-big-size <= $sk-heading-smallest-size {
+
+	$val_heading_check: "headings didnt pass!";
+	@debug "$sk-heading-big-size " + $val_heading;
+
+}
+
+@if $sk-heading-medium-size >= $sk-heading-biggest-size or $sk-heading-medium-size >= $sk-heading-big-size or $sk-heading-medium-size <= $sk-heading-small-size or $sk-heading-medium-size <= $sk-heading-smallest-size {
+
+	$val_heading_check: "headings didnt pass!";
+	@debug "$sk-heading-medium-size " + $val_heading;
+
+}
+
+@if $sk-heading-small-size >= $sk-heading-biggest-size or $sk-heading-small-size >= $sk-heading-big-size or $sk-heading-small-size >= $sk-heading-medium-size or $sk-heading-small-size < $sk-heading-smallest-size {
+	
+	$val_heading_check: "headings didnt pass!";
+	@debug "$sk-heading-small-size " + $val_heading;
+
+}
+
+@if $sk-heading-smallest-size >= $sk-heading-biggest-size or $sk-heading-smallest-size >= $sk-heading-big-size or $sk-heading-smallest-size >= $sk-heading-medium-size or $sk-heading-smallest-size > $sk-heading-small-size {
+
+	$val_heading_check: "headings didnt pass!";
+	@debug "$sk-heading-smallest-size " + $val_heading;
+
+}
+
+// checks
+
+@debug "--- tests --------------------";
+@debug $val_heading_check;

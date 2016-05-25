@@ -1,0 +1,28 @@
+// StarterKit by Fold
+// global.scss
+
+html, body {
+	font-size: rem-calc($sk-base-font-size);
+	color: $sk-base-color;
+	font-family: $sk-base-font-family;
+	text-rendering: $sk-text-rendering;
+	@include font-smoothing($sk-font-smoothing);
+	background-color: $sk-app-bg-color;
+}
+
+hr {
+	border: none;
+	height: $hr-medium-height;
+	background-color: $hr-primary-color;
+	&.secondary { background-color: $hr-secondary-color; }
+	&.high { height: $hr-big-height; }
+	&.short { height: $hr-small-height; }
+	&.full { width: $hr-full-width; }
+	&.big { width: $hr-big-width; }
+	&.medium { width: $hr-medium-width; }
+	&.small { width: $hr-small-width; }
+}
+
+/* [class*="column"] + [class*="column"]:last-child {
+  float: left;
+} */

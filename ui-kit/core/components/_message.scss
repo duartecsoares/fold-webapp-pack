@@ -1,0 +1,99 @@
+// StarterKit by Fold
+// modal.scss
+
+.message {
+
+    display: block;
+    position: relative;
+
+    padding: $sk-message-padding;
+    margin: $sk-message-margin;
+
+    &.info {
+        border: $sk-message-info-border;
+        background-color: $sk-message-info-bg;
+        color: $sk-message-info-color;
+    }
+
+    &.success {
+        border: $sk-message-success-border;
+        background-color: $sk-message-success-bg;
+        color: $sk-message-success-color;
+    }
+
+    .close {
+
+        width: $sk-message-close-size;
+        height: $sk-message-close-size;
+        right: $sk-message-close-horizontal-ident;
+
+        line-height: 0;
+        position: absolute;
+
+        &.center {
+            top: 50%;
+            transform: translate(0, -50%);
+        }
+
+        &.top {
+            top: $sk-message-close-vertical-ident;
+        }
+    }
+
+    p {
+        margin:  0;
+    }
+
+    h4 {
+        margin: $sk-message-h4-margin;
+    } 
+}
+
+.notify {
+    background-color: #58A0DF;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: layer4();
+    text-align: center;
+    padding: 20px 0;
+
+    &.fixed {
+        position: fixed
+    }
+
+    .notify-title {
+        display: inline-block;
+        padding-right: 20px;
+        margin: 0;
+    }
+
+    .notify-text {
+        display: inline-block;
+        color: $sk-_white;
+        margin: 0;
+    }
+
+    .close {
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        right: 16px;
+        top: 50%;
+        transform: translate(0, -50%);
+        line-height: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

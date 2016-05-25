@@ -1,0 +1,33 @@
+// StarterKit by Fold
+// label.scss
+
+.label {
+    background-color: $sk-gray-lighter;
+    color: $sk-gray-dark;
+    display: inline-block;
+	position: relative;
+	border-radius: 2px;
+	padding: 5px 10px;
+
+	transition: background-color 150ms ease-out;
+
+	&+.label {
+		margin-left: 15px;
+	}
+
+	.detail {
+		display: inline-block;
+		margin-left: 8px;
+	}
+}
+
+a {
+	&.label {
+		text-decoration: none;
+
+		&:hover {
+			background-color: $sk-gray-light;
+			color: $sk-gray-darker;	
+		}
+	}
+}

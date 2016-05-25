@@ -1,0 +1,22 @@
+// StarterKit by Fold
+// hero.scss
+
+.hero {
+
+	
+    background-size: cover;
+  	width: $sk-hero-width;
+    height: $sk-hero-height;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: $sk-hero-margin-top;
+    margin-bottom: $sk-hero-margin-bottom;
+    overflow: hidden;
+
+    img {
+		display: block;
+		margin: auto;
+		width: 100%;
+    }
+
+}

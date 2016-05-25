@@ -1,0 +1,41 @@
+// StarterKit by Fold Components
+// table.scss
+
+.table {
+	text-align: left;
+
+	thead, tbody { tr { th, td { 
+		padding: $sk-table-padding-medium;
+		vertical-align: top;
+	} } }
+
+	&.middle {
+		thead, tbody { tr { th, td { vertical-align: middle; } } }
+	}
+
+	&.small {
+		thead, tbody { tr { th, td { padding: $sk-table-padding-small; } } }
+	}
+
+	&.medium {
+		thead, tbody { tr { th, td { padding: $sk-table-padding-medium; } } }
+	}
+
+	&.big {
+		thead, tbody { tr { th, td { padding: $sk-table-padding-big; } } }
+	}
+
+	&.border {
+		thead { tr { th { 
+			background-color: $sk-table-border-bg;
+			border: $sk-table-border;
+		 } } }
+
+		tbody { tr { td { border: $sk-table-border; } } }
+	}
+
+	&.full {
+		width: 100%
+	}
+}
+

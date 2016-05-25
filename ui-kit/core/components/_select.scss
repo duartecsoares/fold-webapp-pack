@@ -1,0 +1,79 @@
+// StarterKit by Fold
+// select.scss
+
+.select-wrap {
+    content: " ";
+    overflow: display;
+   
+
+    // Redo this !!!!!!!!!!!!!!!!!!
+    height: $select-wrap-height;
+    
+    position: relative;
+    z-index: auto;
+
+    .select {
+        border: $select-border;
+        border-radius: $select-radius;
+        cursor: pointer;
+
+        .default, .option {
+            display: block;
+            padding: $select-option-padding;
+            color: $select-option-color;
+        }
+
+        .default {
+            padding-right: $select-defaut-padding-right;
+            position: relative;
+            
+            &:before {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 50%;
+                transform: translate(0, -50%);
+                right: $select-dropdown-icon-ident;
+
+                height: $sk-dropdown-icon-size;
+                width: $sk-dropdown-icon-size;
+                
+                background-image: $sk-dropdown-icon;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 100%;
+            }
+        }
+
+        .options {
+            height: 0;
+            overflow: hidden;
+
+            .option:hover {
+                color: $select-option-color-hover;
+            }
+
+            .option{
+                border-top: $select-option-border;
+            }
+        }
+    }
+
+    &:hover {
+        z-index: 1000;
+
+        .select {
+            background-color: $select-bg-color;
+
+            .options {
+                height: auto;
+            }
+
+            box-shadow: $select-box-shadow;
+
+        }
+    }
+}
+
+
+

@@ -1,0 +1,39 @@
+// StarterKit by Fold
+// avatar.scss
+
+.avatar {
+
+    background-image: $sk-avatar-default-image;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+
+    width: $sk-avatar-medium;
+    height: $sk-avatar-medium;
+
+    &.small {
+        width: $sk-avatar-small;
+        height: $sk-avatar-small;
+    }
+
+    &.medium {
+        width: $sk-avatar-medium;
+        height: $sk-avatar-medium;
+    }
+
+    &.big {
+        width: $sk-avatar-big;
+        height: $sk-avatar-big;
+    }
+
+    &.rounded {
+        border-radius: $sk-avatar-rounded-radius;
+    } 
+
+    &.circle  {
+        border-radius: $sk-avatar-circle-radius; 
+    }
+}
+
+ 

@@ -116,7 +116,7 @@ module.exports = function(grunt){
 
 	     		files: {
 
-			        'dist/css/foldwebapppack.css': 'styles/scss/foldwebapppack.scss'
+			        'dist/css/foldwebapppack.css': 'ui-kit/project/foldwebapppack.scss'
 			    }
 	     	}    
 
@@ -126,7 +126,7 @@ module.exports = function(grunt){
 
 			css: {
 
-		       	files: 'styles/**/*.scss',
+		       	files: 'ui-kit/**/*.scss',
 		       	tasks: ["sass", "autoprefixer"]		
 
 		    },

@@ -1,0 +1,57 @@
+// StarterKit by Fold
+// text.scss
+
+//types of texts
+
+// headings
+// paragraps
+// links <a>
+
+
+//headings
+
+@mixin heading-style($size, $margin, $weight, $letter-spacing, $text-transform){
+	font-size: 		rem-calc($size);
+	margin: 		$margin;
+	font-weight: 	$weight;
+	letter-spacing: $letter-spacing;
+	text-transform: $text-transform;
+}
+
+.heading {
+	&.biggest { @include heading-style($sk-heading-biggest-size, $sk-heading-biggest-margin, $sk-heading-biggest-weight, $sk-heading-biggest-letter-spacing, $sk-heading-biggest-text-transform); }
+	&.big { @include heading-style($sk-heading-big-size, $sk-heading-big-margin, $sk-heading-big-weight, $sk-heading-big-letter-spacing, $sk-heading-big-text-transform); }
+	&.medium { @include heading-style($sk-heading-medium-size, $sk-heading-medium-margin, $sk-heading-medium-weight, $sk-heading-medium-letter-spacing, $sk-heading-medium-text-transform); }
+	&.small { @include heading-style($sk-heading-small-size, $sk-heading-small-margin, $sk-heading-small-weight, $sk-heading-small-letter-spacing, $sk-heading-small-text-transform); }
+	&.smallest { @include heading-style($sk-heading-smallest-size, $sk-heading-smallest-margin, $sk-heading-smallest-weight, $sk-heading-smallest-letter-spacing, $sk-heading-smallest-text-transform); }
+}
+
+.paragraph {
+	font-size: rem-calc($sk-paragraph-size);
+	line-height: rem-calc($sk-paragraph-line-height);
+	margin: $sk-paragraph-margin;
+
+	&.big {
+		font-size: rem-calc($sk-paragraph-size-big);
+		line-height: rem-calc($sk-paragraph-line-height-big);
+		margin: $sk-paragraph-margin-big;
+	}
+
+	&.small {
+		font-size: rem-calc($sk-paragraph-size-small);
+		line-height: rem-calc($sk-paragraph-line-height-small);
+		margin: $sk-paragraph-margin-small;
+	}
+}
+
+a {
+	color: $sk-a-color;
+	text-decoration: $sk-a-decoration;
+
+	&:hover {
+		text-decoration: $sk-a-decoration-hover;
+	}
+}
+
+
+

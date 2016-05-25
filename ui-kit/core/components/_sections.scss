@@ -1,0 +1,83 @@
+// StarterKit by Fold Components
+// sections.scss
+
+// the goal is define every possible area of a layout and set rules to each one. Each area should have 3 (max) variations of its own.
+
+// types of sections
+
+// header x
+// section v
+// container x
+// content v
+// panel v
+
+@function set-spacing($multiplier: 1){
+
+	@return ceil($sk-base-font-size * $multiplier) * 1;
+	
+}
+
+.section {
+
+	margin-top: set-spacing($sk-section-vertical-offset-medium-multiplier);
+	margin-bottom: set-spacing($sk-section-vertical-offset-medium-multiplier);
+
+	&.big {
+	
+		margin-top: set-spacing($sk-section-vertical-offset-big-multiplier);
+		margin-bottom: set-spacing($sk-section-vertical-offset-big-multiplier);
+
+	}
+
+	&.small {
+	
+		margin-top: set-spacing($sk-section-vertical-offset-small-multiplier);
+		margin-bottom: set-spacing($sk-section-vertical-offset-small-multiplier);
+
+	}
+
+}
+
+.content {
+
+	padding-top: set-spacing($sk-content-vertical-inset-medium-multiplier);
+	padding-bottom: set-spacing($sk-content-vertical-inset-medium-multiplier);
+	overflow: hidden;
+
+	&.big {
+	
+		padding-top: set-spacing($sk-content-vertical-inset-big-multiplier);
+		padding-bottom: set-spacing($sk-content-vertical-inset-big-multiplier);
+
+	}
+
+	&.small {
+	
+		padding-top: set-spacing($sk-content-vertical-inset-small-multiplier);
+		padding-bottom: set-spacing($sk-content-vertical-inset-small-multiplier);
+
+	}
+
+}
+
+.panel {
+
+	padding-top: set-spacing($sk-panel-vertical-inset-medium-multiplier);
+	padding-bottom: set-spacing($sk-panel-vertical-inset-medium-multiplier);
+	overflow: hidden;
+
+	&.big {
+	
+		padding-top: set-spacing($sk-panel-vertical-inset-big-multiplier);
+		padding-bottom: set-spacing($sk-panel-vertical-inset-big-multiplier);
+
+	}
+
+	&.small {
+	
+		padding-top: set-spacing($sk-panel-vertical-inset-small-multiplier);
+		padding-bottom: set-spacing($sk-panel-vertical-inset-small-multiplier);
+
+	}
+
+}

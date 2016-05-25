@@ -1,0 +1,105 @@
+// StarterKit by Fold
+// dropdown.scss
+
+.item-dropdown {
+
+    display: block;
+    position: relative !important;
+
+    .dropdown-icon-ident {
+
+        padding-right: $sk-dropdown-icon-ident;
+
+    }
+
+    &:before {
+
+        content: "";
+        display: block;
+        position: absolute;
+        right: $sk-nav-link-padding-sides;
+        top: 50%;
+        transform: translate(0, -50%);
+        height: $sk-dropdown-icon-size;
+        width: $sk-dropdown-icon-size;
+        background-image: $sk-dropdown-icon;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+
+    }
+    
+    &:hover { 
+
+        .dropdown {
+
+            display: block;
+
+        }
+
+    }
+
+}
+
+
+.dropdown {
+
+    list-style-type: none;
+    margin: 0;
+    padding: $sk-dropdown-padding;
+    position: absolute;
+    top: 100%;
+    width: $sk-dropdown-width;
+    background: $sk-dropdown-bg;
+    border: $sk-dropdown-border;
+    box-shadow: $sk-dropdown-box-shadow;
+    border-radius: $sk-dropdown-radius;
+
+    .dropdown-item {
+
+        display: block;
+
+        .dropdown-link {
+
+            display: block;
+            padding: $sk-dropdown-link-padding;
+            color: $sk-dropdown-link-color;
+            text-decoration: none;
+
+            &:hover {
+
+                color: $sk-dropdown-link-color-hover;
+
+            }
+
+        }
+
+    }
+
+    .dropdown-item + .dropdown-item {
+
+        border-top: $sk-dropdown-item-border;
+
+    }
+
+    &.left {
+
+        left: 0;
+
+    }
+
+    &.right {
+
+        right: 0;
+
+    }
+    
+    // class deprecated because of issues related to translate overlaps
+    /* &.center {
+
+        left: 50%;
+        transform: translate(-50%,0);
+
+    } */
+        
+}

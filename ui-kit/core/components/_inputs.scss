@@ -1,0 +1,184 @@
+// StarterKit by Fold
+// inputs.scss
+
+.input-label {
+    font-size: rem-calc($sk-input-label-font-size);
+    display: block;
+    padding: $sk-input-label-padding;
+    margin: 0;
+}
+
+.input {
+    &.text {
+        font-size: rem-calc($sk-input-font-size);
+        line-height: rem-calc($sk-input-line-height);
+        width: 100%;
+        border: solid $sk-input-border-thickness $sk-input-border-color;
+        border-radius: $sk-input-border-radius;
+        padding: $sk-input-padding;
+        color: $sk-input-color;
+        background-color: $sk-input-bg;
+        box-shadow: $sk-input-shadow-default;
+        transition: border 0.15s ease-out, box-shadow 0.2s ease-out;
+
+        &[type="password"]{
+            background-image: $sk-input-password-image;
+            background-repeat: no-repeat;
+            background-position: $sk-input-password-position;
+        }
+
+        &:-webkit-autofill {
+            -webkit-box-shadow: $sk-input-shadow-default;
+        }
+
+        &:focus {
+            outline: 0;
+            border: solid $sk-input-border-thickness $sk-input-border-focus;
+            box-shadow: $sk-input-shadow-focus;
+        }
+        
+        &:focus:-webkit-autofill {
+            box-shadow: $sk-input-shadow-default, $sk-input-shadow-focus;
+        }
+
+        &.secondary {
+            border: solid $sk-input-secondary-border-thickness $sk-input-secondary-border-color;
+            border-radius: $sk-input-secondary-border-radius;
+            padding: $sk-input-secondary-padding;
+            color: $sk-input-secondary-color;
+            background-color: $sk-input-secondary-bg;
+            box-shadow: $sk-input-secondary-shadow-default;
+
+            &:focus {
+                outline: 0;
+                border: solid $sk-input-secondary-border-thickness $sk-input-secondary-border-focus;
+            }
+
+            &:-webkit-autofill {
+                -webkit-box-shadow: $sk-input-secondary-shadow-default;
+            }
+
+            &:focus {
+                outline: 0;
+                border: solid $sk-input-secondary-border-thickness $sk-input-secondary-border-focus;
+                box-shadow: $sk-input-secondary-shadow-focus;
+            }
+            
+            &:focus:-webkit-autofill {
+                box-shadow: $sk-input-secondary-shadow-default, $sk-input-secondary-shadow-focus;
+            }
+        }
+    }
+
+    &.radio {
+        display: none;
+        
+        // Used on the label to replace the default radio image
+
+        &+.input-label.radio:before {
+            content: "";
+            display: inline-block;
+            width: $radio-size+px;
+            height: $radio-size+px;
+            margin: $radio-gutter;
+            border: $radio-border;
+            background-color: $radio-bg;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+        
+
+        &:checked {
+            &+.input-label:before {
+                border: $radio-checked-border;
+            }
+        }
+
+    }
+
+	&.checkbox {
+        display: none;
+        
+        // Used on the label to replace the default checkox image
+
+        &+.input-label.checkbox:before {
+            content: "";
+            display: inline-block;
+            margin: $checkbox-gutter;
+            border: $checkbox-border;
+            width: $checkbox-size+px;
+            height: $checkbox-size+px;
+            background-color: $checkbox-bg;
+            position: relative;
+            vertical-align: middle;
+            border-radius: $checkbox-border-radius;
+        }
+        
+        &:checked {
+            &+.input-label:before {
+                background-image: url("../resources/assets/icons/check.svg");
+                background-repeat: no-repeat;
+                background-size: 100%;
+            }
+        }
+	}
+
+    &:focus {
+        outline: 0;
+    }
+
+    &::-webkit-input-placeholder {
+        color: $sk-input-placeholder;
+    }
+    &:-moz-placeholder {
+       color: $sk-input-placeholder;
+       opacity:  1;
+    }
+    &::-moz-placeholder {
+       color: $sk-input-placeholder;
+       opacity:  1;
+    }
+    &:-ms-input-placeholder {
+       color: $sk-input-placeholder;
+    }
+
+    &.secondary {
+        &::-webkit-input-placeholder {
+            color: $sk-input-secondary-placeholder;
+        }
+        &:-moz-placeholder {
+           color: $sk-input-secondary-placeholder;
+           opacity:  1;
+        }
+        &::-moz-placeholder {
+           color: $sk-input-secondary-placeholder;
+           opacity:  1;
+        }
+        &:-ms-input-placeholder {
+           color: $sk-input-secondary-placeholder;
+        }
+    }
+}
+
+
+.radio {
+    &.input-label {
+        margin:     $label-radio-gutter;
+        font-size:  rem-calc($label-radio-font-size);
+        display: inline-block;
+    }
+}
+
+
+.checkbox {
+    &.input-label {
+        margin:     $label-checkbox-gutter;
+        display: inline-block;
+    }
+}
+
+
+
+
+
+

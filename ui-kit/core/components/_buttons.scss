@@ -1,0 +1,120 @@
+// StarterKit by Fold Components
+// buttons.scss
+
+@mixin button-base(
+	$font-family: 		$sk-button-font,
+	$font-weight: 		$sk-button-font-weight,
+	$text-align: 		$sk-button-text-align,
+	$text-transform:	$sk-button-text-transform,
+	$letter-spacing:	$sk-button-letter-spacing,
+	$border-style: 		$sk-button-border-style,
+	$cursor:			$sk-button-cursor ) {
+
+    font-family: 	$font-family;
+    font-weight: 	$font-weight;
+    border-style: 	$border-style;
+    text-align: 	$text-align;
+    cursor: 		$cursor;
+    text-transform: $text-transform;
+    letter-spacing: $letter-spacing;
+
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+
+    &:focus { outline: 0; }
+    transition: background-color 150ms ease-out;
+}
+
+
+
+@mixin button-size(
+	$font-size:			$sk-button-font-size,
+	$padding-vertical:	$sk-button-padding-vertical-medium,
+	$padding-sides: 	$sk-button-padding-sides-medium,
+	$border-width: 		$sk-button-border-width-medium,
+	$border-radius:		$sk-button-border-radius-medium ) {
+	
+	font-size: 		rem-calc($font-size);
+	padding-top: 	$padding-vertical;
+	padding-bottom: $padding-vertical;
+	padding-right: 	$padding-sides;
+	padding-left: 	$padding-sides;
+    border-width: 	$border-width;
+    border-radius: 	$border-radius;
+
+}
+
+@mixin button-color(
+	$bg:			$sk-button-bg, 
+	$bgHover:		$sk-button-bg-hover, 
+	$color:			$sk-button-color,
+	$colorHover:	$sk-button-color-hover, 
+	$border-color: 	$sk-button-border-color ) {
+
+	background-color: 	$bg;
+	color: 				$color;					
+	border-color: 		$border-color;
+
+	&:hover {
+		background-color: $bgHover;
+		color: $colorHover;
+	}
+
+	&:active {
+		//background-color: $bgHover;			//hardcoded value just for :active state, this could change later
+	}
+}
+
+@mixin button-style-no-border(
+	$color:			$button-no-border-color,
+	$color-hover:	$button-no-border-color-hover, 
+	$font-size: 	$button-font-size-small ) {
+
+	background-color: 	transparent;
+	color: 				$color;					
+	font-size: 			$font-size;
+	border-width:		0;
+
+	&:hover {
+		background-color:	transparent;	
+		color: 				$color-hover;	
+	}
+
+	&:active {
+		background-color: 	transparent;			//hardcoded value just for :active state, this could change later
+	}
+}
+
+.button {
+	@include button-base();
+	@include button-size(); 
+	@include button-color();
+	
+	&.secondary { 
+		@include button-base($sk-button-secondary-font, $sk-button-secondary-font-weight, $sk-button-secondary-text-align, $sk-button-secondary-text-transform, $sk-button-secondary-letter-spacing, $sk-button-secondary-border-style, $sk-button-secondary-cursor ); 
+		@include button-size($sk-button-secondary-font-size, $sk-button-secondary-padding-vertical, $sk-button-secondary-padding-sides, $sk-button-secondary-border-width, $sk-button-secondary-border-radius );
+		@include button-color($sk-button-secondary-bg, $sk-button-secondary-bg-hover, $sk-button-secondary-color, $sk-button-secondary-color-hover, $sk-button-secondary-border-color );
+	}
+
+	&.terciary { 
+		@include button-base($sk-button-terciary-font, $sk-button-terciary-font-weight, $sk-button-terciary-text-align, $sk-button-terciary-text-transform, $sk-button-terciary-letter-spacing, $sk-button-terciary-border-style, $sk-button-terciary-cursor ); 
+		@include button-size($sk-button-terciary-font-size, $sk-button-terciary-padding-vertical, $sk-button-terciary-padding-sides, $sk-button-terciary-border-width, $sk-button-terciary-border-radius );
+		@include button-color($sk-button-terciary-bg, $sk-button-terciary-bg-hover, $sk-button-terciary-color, $sk-button-terciary-color-hover, $sk-button-terciary-border-color );
+	} 
+
+	&.error { @include button-color($sk-button-error-bg, $sk-button-error-bg-hover, $sk-button-error-color, $sk-button-error-color, $sk-button-error-border-color); }
+	&.success { @include button-color($sk-button-success-bg, $sk-button-success-bg-hover, $sk-button-success-color, $sk-button-success-color, $sk-button-success-border-color); }
+	&.disabled { @include button-color($sk-button-disabled-bg, $sk-button-disabled-bg-hover, $sk-button-disabled-color, $sk-button-disabled-color, $sk-button-disabled-border-color); }
+	&.warning { @include button-color($sk-button-warning-bg, $sk-button-warning-bg-hover, $sk-button-warning-color, $sk-button-warning-color, $sk-button-warning-border-color); }
+
+	&.big { @include button-size($sk-button-font-size-big, $sk-button-padding-vertical-big, $sk-button-padding-sides-big, $sk-button-border-width-big, $sk-button-border-radius-big); }
+	&.small { @include button-size($sk-button-font-size-small, $sk-button-padding-vertical-small, $sk-button-padding-sides-small, $sk-button-border-width-small, $sk-button-border-radius-small); }	
+	
+	&.rounded {border-radius: 100rem}
+	&.full { width: 100% }
+}
+
+button:focus {
+	outline: none;
+}

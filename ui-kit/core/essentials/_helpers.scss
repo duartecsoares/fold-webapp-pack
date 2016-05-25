@@ -1,0 +1,165 @@
+// StarterKit by Fold
+// helpers.scss
+
+.text-underline{
+	text-decoration: underline !important;
+}
+
+.text-center{
+	text-align: center !important;
+}
+
+.full-width-wrap {
+	display: block;
+	width: 100%;
+	position: relative;
+}
+
+.display-none {
+	
+	display: none;
+
+}
+
+////////////////////////////////
+
+////////////////////////////////
+
+//
+// Margins & Paddings
+//
+
+
+
+// margin-top
+
+.margin-top-none {
+	margin-top: 0px !important;
+}
+
+.margin-top-smallest {
+	margin-top: $sk-helper-margin-smallest !important;
+}
+
+.margin-top-small {
+	margin-top: $sk-helper-padding-small !important;
+}
+
+.margin-top-medium {
+	margin-top: $sk-helper-padding-medium !important;
+}
+
+.margin-top-big {
+	margin-top: $sk-helper-padding-big !important;
+}
+
+.margin-top-biggest {
+	margin-top: $sk-helper-padding-biggest !important;
+}
+
+
+
+// margin-bottom
+
+.margin-bottom-none {
+	margin-bottom: 0px !important;
+}
+
+.margin-bottom-smallest {
+	margin-bottom: $sk-helper-margin-smallest !important;
+}
+
+.margin-bottom-small {
+	margin-bottom: $sk-helper-margin-small !important;
+}
+
+.margin-bottom-medium {
+	margin-bottom: $sk-helper-margin-medium !important;
+}
+
+.margin-bottom-big {
+	margin-bottom: $sk-helper-margin-big !important;
+}
+
+.margin-bottom-biggest {
+	margin-bottom: $sk-helper-margin-biggest !important;
+}
+
+
+
+// padding
+
+.padding-none {
+	padding: 0;
+}
+
+.padding-side-none {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+
+
+// padding-top
+
+.padding-top-none {
+	padding-top: 0px !important;
+}
+
+.padding-top-smallest {
+	padding-top: $sk-helper-padding-smallest !important;
+}
+
+.padding-top-small {
+	padding-top: $sk-helper-padding-small !important;
+}
+
+.padding-top-medium {
+	padding-top: $sk-helper-padding-medium !important;
+}
+
+.padding-top-big {
+	padding-top: $sk-helper-padding-big !important;
+}
+
+.padding-top-biggest {
+	padding-top: $sk-helper-padding-biggest !important;
+}
+
+
+
+// padding-bottom
+
+.padding-bottom-none {
+	padding-bottom: 0px !important;
+}
+
+.padding-bottom-smallest {
+	padding-bottom: $sk-helper-padding-smallest !important;
+}
+
+.padding-bottom-small {
+	padding-bottom: $sk-helper-padding-small !important;
+}
+
+.padding-bottom-medium {
+	padding-bottom: $sk-helper-padding-medium !important;
+}
+
+.padding-bottom-big {
+	padding-bottom: $sk-helper-padding-big !important;
+}
+
+.padding-bottom-biggest {
+	padding-bottom: $sk-helper-padding-biggest !important;
+}
+
+
+
+
+
+
+
+
+
+

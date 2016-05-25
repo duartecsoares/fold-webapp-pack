@@ -1,0 +1,52 @@
+// StarterKit by Fold Components
+// breadcrumb.scss
+
+.breadcrumb {
+	.list {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.item {
+		padding: 0;
+		margin: 0;
+		display: inline-block;
+
+		&+.item {
+			&:before {
+			    content: "";
+			    display: inline-block;
+			    margin: $sk-breadcrumb-divider-margin;
+			    
+			    height: $sk-breadcrumb-divider-icon-size;
+			    width: $sk-breadcrumb-divider-icon-size;
+			    
+			    background-image: $sk-breadcrumb-divider-icon;
+			    background-position: center;
+			    background-repeat: no-repeat;
+			    background-size: 100%; 
+			}
+		}
+	}
+
+	.link {
+	    display: inline-block;
+		padding: $sk-breadcrumb-link-padding;
+		color: $sk-breadcrumb-link-color;
+        text-decoration: none;
+
+		&.selected {
+		    color: $sk-breadcrumb-link-color-selected;
+		}
+
+        &:hover {
+            color: $sk-breadcrumb-link-color-hover;
+        }
+	}
+}
+
+
+
+
+

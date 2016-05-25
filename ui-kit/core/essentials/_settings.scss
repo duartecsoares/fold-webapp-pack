@@ -1,0 +1,1460 @@
+// StarterKit by Fold
+// 2015-06-18
+
+// Fonts
+
+$sk-font-sans: 		Lato, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !default;
+$sk-font-serif: 	Georgia, Cambria, "Times New Roman", Times, serif !default;
+$sk-font-monospace: Consolas, "Liberation Mono", Courier, monospace !default;
+
+$sk-font-weight-100: 	100 !default;
+$sk-font-weight-200: 	200 !default;
+$sk-font-weight-300: 	300 !default;
+$sk-font-weight-400: 	400 !default;
+$sk-font-weight-500: 	500 !default;
+$sk-font-weight-600: 	600 !default;
+$sk-font-weight-700: 	700 !default;
+$sk-font-weight-800: 	800 !default;
+$sk-font-weight-900: 	900 !default;
+$sk-font-weight-normal: normal !default;
+$sk-font-weight-bold: 	bold !default;
+
+$sk-text-rendering: optimizeLegibility; 	// auto || optimizeSpeed || optimizeLegibility
+$sk-font-smoothing : antialiased;			// subpixel-antialiased || antialiased;
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+// StarterKit by Fold
+// colors.scss
+
+// constant variables are marked with _
+$sk-_black: 	#000000;
+$sk-_white: 	#ffffff;
+$sk-_silver: 	#C0C0C0;
+$sk-_violet: 	#EE82EE;
+$sk-_tomato: 	#FF6347;
+
+// Social Colors
+$sk-twitter-color: 	#1AB7EA !default;
+$sk-facebook-color: #3b5998 !default;
+$sk-youtube-color: #cc181e !default;
+
+//main colors
+$sk-palette-light-color:	#000000 !default;
+$sk-primary-color: 			#58A0DF !default;
+$sk-secondary-color: 		#000000 !default;
+$sk-tertiary-color:			#000000 !default;
+$sk-palette-dark-color:		#000000 !default;
+
+$sk-primary-color-rgba-30:	rgba(99, 177, 227, 0.30) !default;
+
+//feedback colors
+$sk-success-lighter-color:	#E2FAE9 !default;
+$sk-success-light-color:	#A1D9B4 !default;
+$sk-success-color:			#5CBA8E !default;
+
+$sk-info-color: 	#9CA1A7 !default;
+$sk-warning-color: 	#F8CB0E !default;
+$sk-error-color: 	#EB555A !default;
+
+//grays
+$sk-gray-darker: 	#2B2C2D !default;
+$sk-gray-dark: 		#3D4247 !default;
+$sk-gray: 			#9CA1A7 !default;
+$sk-gray-light: 	#D5DAE0 !default;
+$sk-gray-lighter: 	#ECEFF1 !default;
+
+$sk-gray-dark-rgba-40: rgba(61, 66, 71, 0.40) !default;
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+// General Settings
+
+// 1. App settings
+//
+
+$sk-app-bg-color: 	$sk-_white !default;
+
+$layer-bg:				-5000;
+$layer-bg-increment:	0;
+$layer0:				0;
+$layer0-increment:		0;
+$layer1:				5000;
+$layer1-increment:		0;
+$layer2:				10000;
+$layer2-increment:		0;
+$layer3:				15000;
+$layer3-increment:		0;
+$layer4:				20000;
+$layer4-increment:		0;
+
+// Foundation Grid Override
+
+//$row-width: rem-calc(1000) !default;
+//$total-columns: 12 !default;
+//$column-gutter: rem-calc(30) !default;
+//$last-child-float: 	left !default;
+
+// 1.1 Helpers
+//
+
+$sk-helper-padding-smallest:	12px !default;
+$sk-helper-padding-small:		24px !default;
+$sk-helper-padding-medium: 		36px !default;
+$sk-helper-padding-big: 		48px !default;
+$sk-helper-padding-biggest: 	60px !default;
+
+$sk-helper-margin-smallest:	12px !default;
+$sk-helper-margin-small:	24px !default;
+$sk-helper-margin-medium: 	36px !default;
+$sk-helper-margin-big: 		48px !default;
+$sk-helper-margin-biggest: 	60px !default;
+
+
+//
+////////////////////////////////
+
+// 2. Typography
+//
+// 2.1 Base Font Settings
+//
+
+$sk-base-font-size: 		16 !default;			//base settings aka base unit for most multipliers
+$sk-base-font-family: 		$sk-font-sans !default;
+$sk-base-color: 			$sk-gray-dark !default;
+$sk-base-line-height: 		$sk-base-font-size*1.5 !default;
+$sk-base-secondary-color: 	$sk-gray !default;
+
+// 2.2 Headings
+//
+// set heading value or it uses default one
+
+$sk-heading-biggest-size: 	60px !default;
+$sk-heading-big-size: 		48px !default;
+$sk-heading-medium-size: 	36px !default;
+$sk-heading-small-size: 	24px !default;
+$sk-heading-smallest-size: 	18px !default;
+
+$sk-heading-biggest-margin: 	42px 0 !default;
+$sk-heading-big-margin: 		36px 0 !default;
+$sk-heading-medium-margin: 		30px 0 !default;
+$sk-heading-small-margin: 		24px 0 !default;
+$sk-heading-smallest-margin: 	18px 0 !default;
+
+$sk-heading-biggest-weight: 	$sk-font-weight-bold !default;
+$sk-heading-big-weight: 		$sk-font-weight-bold !default;
+$sk-heading-medium-weight: 		$sk-font-weight-bold !default;
+$sk-heading-small-weight: 		$sk-font-weight-bold !default;
+$sk-heading-smallest-weight: 	$sk-font-weight-normal !default;
+
+$sk-heading-biggest-letter-spacing: 	initial !default;
+$sk-heading-big-letter-spacing: 		initial !default;
+$sk-heading-medium-letter-spacing: 		initial !default;
+$sk-heading-small-letter-spacing: 		initial !default;
+$sk-heading-smallest-letter-spacing: 	initial !default;
+		
+$sk-heading-biggest-text-transform: 	initial !default;
+$sk-heading-big-text-transform: 		initial !default;
+$sk-heading-medium-text-transform: 		initial !default;
+$sk-heading-small-text-transform: 		initial !default;
+$sk-heading-smallest-text-transform: 	initial !default;
+
+// 2.3 Paragraphs
+//
+
+$sk-paragraph-size-big: 	$sk-base-font-size * 1.2 !default;
+$sk-paragraph-size: 		$sk-base-font-size !default;
+$sk-paragraph-size-small: 	$sk-base-font-size * 0.8 !default;
+
+$sk-paragraph-line-height-big: 		$sk-base-font-size * 1.5 * 1.2 !default;
+$sk-paragraph-line-height: 			$sk-base-font-size * 1.5 !default;
+$sk-paragraph-line-height-small: 	$sk-base-font-size * 1.5 * 0.8 !default;
+
+$sk-paragraph-margin-big: 	24px 0 !default;
+$sk-paragraph-margin: 		16px 0 !default;
+$sk-paragraph-margin-small: 12px 0 !default;
+
+// 2.4 Links <a>
+//
+
+$sk-a-color: 			$sk-primary-color !default;
+$sk-a-decoration: 		none !default;
+$sk-a-decoration-hover: underline !default;
+
+//
+////////////////////////////////
+
+// 3. Buttons
+//
+// Buttons base styles
+
+$sk-button-font: 			$sk-base-font-family !default;
+$sk-button-font-weight:		$sk-font-weight-normal !default;
+$sk-button-text-align: 		center !default;
+$sk-button-text-transform: 	initial !default;
+$sk-button-letter-spacing: 	0 !default;
+$sk-button-border-style: 	solid !default;
+$sk-button-cursor: 			pointer !default;
+
+$sk-button-font-size-big: 	$sk-base-font-size * 1.2 !default;
+$sk-button-font-size: 		$sk-base-font-size !default;
+$sk-button-font-size-small: $sk-base-font-size * 0.8 !default;
+
+$sk-button-padding-vertical-big:	20px !default;
+$sk-button-padding-vertical-medium:	14px !default;
+$sk-button-padding-vertical-small:	8px !default;
+
+$sk-button-padding-sides-big:		36px !default;
+$sk-button-padding-sides-medium:	24px !default;
+$sk-button-padding-sides-small:		12px !default;
+
+$sk-button-border-width-big: 		1px !default;
+$sk-button-border-width-medium: 	1px !default;
+$sk-button-border-width-small: 		1px !default;
+$sk-button-border-radius-big:		3px !default;
+$sk-button-border-radius-medium:	2px !default;
+$sk-button-border-radius-small:		2px !default;
+
+$sk-button-bg: 			$sk-primary-color !default;
+$sk-button-success-bg:	$sk-success-color !default;
+$sk-button-disabled-bg:		$sk-info-color !default;
+$sk-button-warning-bg:	$sk-warning-color !default;
+$sk-button-error-bg:	$sk-error-color !default;
+
+$sk-button-bg-hover-dark:	12% !default;
+
+$sk-button-bg-hover: 			shade($sk-button-bg, $sk-button-bg-hover-dark) !default;
+$sk-button-success-bg-hover:	shade($sk-button-success-bg, $sk-button-bg-hover-dark) !default;
+$sk-button-disabled-bg-hover:	shade($sk-button-disabled-bg, $sk-button-bg-hover-dark) !default;
+$sk-button-warning-bg-hover:	shade($sk-button-warning-bg, $sk-button-bg-hover-dark) !default;
+$sk-button-error-bg-hover:		shade($sk-button-error-bg, $sk-button-bg-hover-dark) !default;
+
+$sk-button-color: 			$sk-_white !default;
+$sk-button-success-color:	$sk-_white !default;
+$sk-button-disabled-color:		$sk-_white !default;
+$sk-button-warning-color:	$sk-_white !default;
+$sk-button-error-color:	$sk-_white !default;
+
+$sk-button-color-hover: 		$sk-_white !default;
+$sk-button-success-color-hover:	$sk-_white !default;
+$sk-button-disabled-color-hover:	$sk-_white !default;
+$sk-button-warning-color-hover:	$sk-_white !default;
+$sk-button-error-color-hover:	$sk-_white !default;
+
+$sk-button-border-color: 			transparent !default;
+$sk-button-success-border-color:	transparent !default;
+$sk-button-disabled-border-color:		transparent !default;
+$sk-button-warning-border-color:	transparent !default;
+$sk-button-error-border-color:		transparent !default;
+
+
+// 3.1 Secondary
+//
+
+$sk-button-secondary-font: 				$sk-base-font-family !default;
+$sk-button-secondary-font-weight:		$sk-font-weight-bold !default;
+$sk-button-secondary-text-align: 		center !default;
+$sk-button-secondary-text-transform: 	uppercase !default;
+$sk-button-secondary-letter-spacing: 	1px !default;
+$sk-button-secondary-border-style: 		solid !default;
+$sk-button-secondary-cursor: 			pointer !default;
+$sk-button-secondary-font-size: 		$sk-base-font-size !default;
+$sk-button-secondary-padding-vertical:	14px !default;
+$sk-button-secondary-padding-sides:		24px !default;
+$sk-button-secondary-border-width: 		1px !default;
+$sk-button-secondary-border-radius:		2px !default;
+$sk-button-secondary-bg:				transparent !default; 
+$sk-button-secondary-bg-hover:			$sk-primary-color !default;
+$sk-button-secondary-color: 			$sk-primary-color !default;
+$sk-button-secondary-color-hover: 		$sk-_white !default;
+$sk-button-secondary-border-color: 		$sk-primary-color !default;
+
+
+// 3.2 Terciary
+//
+
+$sk-button-terciary-font: 				$sk-base-font-family !default;
+$sk-button-terciary-font-weight:		$sk-font-weight-300 !default;
+$sk-button-terciary-text-align: 		left !default;
+$sk-button-terciary-text-transform: 	capitalize !default;
+$sk-button-terciary-letter-spacing: 	0 !default;
+$sk-button-terciary-border-style: 		solid !default;
+$sk-button-terciary-cursor: 			pointer !default;
+$sk-button-terciary-font-size: 			$sk-base-font-size !default;
+$sk-button-terciary-padding-vertical:	14px !default;
+$sk-button-terciary-padding-sides:		24px !default;
+$sk-button-terciary-border-width: 		1px !default;
+$sk-button-terciary-border-radius:		100rem !default;
+$sk-button-terciary-bg:					$sk-primary-color !default; 
+$sk-button-terciary-bg-hover:			$sk-button-bg-hover !default;
+$sk-button-terciary-color: 				$sk-_white !default;
+$sk-button-terciary-color-hover: 		$sk-_white !default;
+$sk-button-terciary-border-color: 		$sk-primary-color !default;
+
+
+////////////////////////////////
+
+// 4. Inputs
+//
+// Inputs base styles
+//
+
+// Input Label
+//
+
+$sk-input-label-font-size: 	$sk-base-font-size !default;
+$sk-input-label-padding: 	8px 0px !default;
+
+//
+// 4.1 Text Input
+//
+
+$sk-input-font-size:		$sk-base-font-size !default;
+$sk-input-line-height:		$sk-base-font-size * 1.5 !default;
+$sk-input-border-thickness:	1px !default;
+$sk-input-border-radius: 	2px !default;
+$sk-input-border-color: 	$sk-gray-dark !default;
+$sk-input-border-focus: 	$sk-primary-color !default;
+$sk-input-padding: 			15px !default;
+$sk-input-placeholder: 		$sk-gray !default;
+$sk-input-color: 			$sk-_black !default;
+$sk-input-bg: 				$sk-_white !default;
+$sk-input-shadow-default:	0 0 0 10rem $sk-input-bg inset !default;
+$sk-input-shadow-focus:		0px 0px 5px $sk-primary-color-rgba-30 !default;
+
+// 4.1.1 Text Password
+
+$sk-input-password-image:		url("../resources/assets/icons/lockedalt.svg") !default;
+$sk-input-password-position:	95% !default;
+
+//
+// 4.2 Text Input Secondary
+//
+
+$sk-input-secondary-border-thickness:	1px !default;
+$sk-input-secondary-border-radius: 		2px !default;
+$sk-input-secondary-border-color: 		$sk-gray-light !default;
+$sk-input-secondary-border-focus: 		$sk-gray !default;
+$sk-input-secondary-padding: 			15px !default;
+$sk-input-secondary-placeholder: 		$sk-gray !default;
+$sk-input-secondary-color: 				$sk-_black !default;
+$sk-input-secondary-bg: 				$sk-gray-lighter !default;
+$sk-input-secondary-shadow-default:		0 0 0 10rem $sk-input-secondary-bg inset !default;
+$sk-input-secondary-shadow-focus:		0 0 0 0 !default;
+
+//
+// 4.3 Radio Input
+//
+
+// TO DO: Make this useful
+
+$radio-gutter 			: 0px 15px 0px 0px;
+$radio-border 			: $sk-gray-dark 1px solid;
+$radio-size 			: 26;
+$radio-bg 		: $sk-_white;
+$radio-checked-size 	: 0.4;
+$radio-checked-border 	: $sk-gray-dark 8px solid;
+
+$label-radio-gutter 	: 10px 20px 10px 0px;
+$label-radio-font-size 	: $sk-input-label-font-size !default;
+
+//
+// 4.4 Checkbox Input
+//
+
+// TO DO: Make this useful
+
+$checkbox-gutter 		: 0px 15px 0px 0px;
+$checkbox-border 		: $sk-gray-dark 1px solid;
+$checkbox-size 		    : 26;
+$checkbox-bg 	: $sk-_white;
+$checkbox-border-radius	: 2px;
+
+$label-checkbox-gutter 	    : 10px 20px 10px 0px;
+$label-checkbox-font-size   : $sk-input-label-font-size !default;
+
+//
+// 4.5 Switch Input 
+//
+
+// TO DO: add different sizes
+
+$sk-switch-height:		42 !default;
+$sk-switch-width:		84 !default;
+$sk-switch-border-size: 1 !default;
+
+
+$sk-switch-color-bg: 		$sk-_white !default;
+$sk-switch-color: 			$sk-gray !default;
+$sk-switch-color-checked: 	$sk-gray-dark !default;
+
+$sk-switch-border:			$sk-switch-border-size+px solid $sk-gray !default;
+$sk-switch-border-checked:	$sk-switch-border-size+px solid $sk-gray-dark !default;
+
+$sk-switch-circle-size:				30 !default;
+$sk-switch-circle-ident: 			($sk-switch-height - $sk-switch-circle-size - $sk-switch-border-size*2)/2;;
+$sk-switch-circle-margin-checked:	$sk-switch-width - $sk-switch-circle-size - $sk-switch-circle-ident*2 - $sk-switch-border-size*2;
+
+
+//
+// 4.6 Select Input (not really done for select input)
+//
+
+// TO DO: Make this useful
+
+$select-wrap-height:			56px;
+$select-border:					1px solid $sk-gray-light;
+$select-radius:					2px;
+$select-defaut-padding-right:	40px;
+$select-dropdown-icon-ident:	20px;
+$select-box-shadow:				0px 2px 6px 0px rgba(61, 65, 71, 0.08);
+$select-option-border:			1px $sk-gray-lighter solid;
+$select-bg-color:		$sk-_white;
+
+$select-option-padding:			15px 20px;
+$select-option-color: 			$sk-gray;
+$select-option-color-hover: 	$sk-gray-dark;
+
+
+////////////////////////////////
+
+// 5. Sections and Containers
+//
+// 5.1 Spacings
+//
+
+$sk-section-vertical-offset-big-multiplier: 	3.5 !default;	//offset as margin
+$sk-section-vertical-offset-medium-multiplier: 	3 !default;
+$sk-section-vertical-offset-small-multiplier:	2.5 !default;
+
+$sk-content-vertical-inset-big-multiplier: 		2 !default;	//inset as padding
+$sk-content-vertical-inset-medium-multiplier: 	1.5 !default;
+$sk-content-vertical-inset-small-multiplier: 	1.25 !default;
+
+$sk-panel-vertical-inset-big-multiplier: 	1.25 !default;		//inset as padding
+$sk-panel-vertical-inset-medium-multiplier: 1 !default;
+$sk-panel-vertical-inset-small-multiplier: 	0.5 !default;
+
+////////////////////////////////
+
+////////////////////////////////
+
+// 6. Elements Customization
+//
+// 6.1 hr
+//
+
+// TO DO: Make this useful
+
+$hr-primary-color: 		$sk-_black;
+$hr-secondary-color: 	$sk-gray-light;
+$hr-primary-height: 	1px;
+$hr-secondary-height: 	$hr-primary-height;
+$hr-full-width: 		100%;
+$hr-big-width: 			$sk-base-font-size * 50;
+$hr-medium-width: 		$sk-base-font-size * 25;
+$hr-small-width: 		$sk-base-font-size * 15;
+
+$hr-big-height: 		4px;
+$hr-medium-height: 		2px;
+$hr-small-height: 		1px;
+
+//
+// 6.2 hero
+//
+
+$sk-hero-width: 		100% !default;
+$sk-hero-height: 		500px !default;
+$sk-hero-margin-top: 	30px !default;
+$sk-hero-margin-bottom: 30px !default;
+
+////////////////////////////////
+
+////////////////////////////////
+
+// 7. Navigation
+
+//
+// 7.1 General Nav
+//
+
+$sk-nav-font: 			$sk-base-font-family !default;
+$sk-nav-font-weight:	$sk-font-weight-normal !default;
+$sk-nav-text-align: 	left !default;
+$sk-nav-text-transform: initial !default;
+$sk-nav-letter-spacing: 0 !default;
+$sk-nav-font-size: 		$sk-base-font-size !default;
+
+$sk-nav-link-color:				$sk-gray !default;
+$sk-nav-link-color-hover:		$sk-primary-color !default;
+$sk-nav-link-color-selected:	$sk-gray-darker !default;
+$sk-nav-link-bg:				transparent !default;
+$sk-nav-link-bg-hover:			transparent !default;
+$sk-nav-link-bg-selected:		transparent !default;
+$sk-nav-link-padding-vertical:	0px !default;
+$sk-nav-link-padding-sides:		0px !default;
+
+$sk-nav-border-size: 		1px !default;
+$sk-nav-border:				none !default;
+$sk-nav-border-hover:		none !default;
+$sk-nav-border-selected: 	none !default;
+$sk-nav-radius:				0 !default;
+
+//
+// 7.2 nav horizontal
+//
+
+$sk-nav-horizontal-item-spacing: 36px !default;
+
+//
+// 7.3 nav vertical
+//
+
+//$sk-nav-vertical-link-selected-icon:		url("../resources/assets/icons/right-chevron.svg");
+//$sk-nav-vertical-link-selected-icon-ident:	10px;
+//$sk-nav-vertical-link-selected-icon-size: 	16px;
+
+$sk-nav-vertical-link-padding-vertical:	8px !default;
+$sk-nav-vertical-link-padding-sides:	0px !default;
+
+//
+// 7.4 nav main
+//
+
+$sk-nav-main-bg: $sk-gray-dark !default;
+
+$sk-nav-logo-margin-left:		20px !default;
+$sk-nav-logo-link-margin-right:	20px !default;
+
+$sk-nav-main-link-padding-vertical:	20px !default !default;
+$sk-nav-main-link-padding-sides:	20px !default !default;
+$sk-nav-main-link-color:			$sk-gray !default;
+$sk-nav-main-link-color-selected:	$sk-_white !default;
+$sk-nav-main-link-color-hover:		$sk-_white !default;
+$sk-nav-main-link-bg:				transparent !default;
+$sk-nav-main-link-bg-selected:		$sk-gray-darker !default;
+$sk-nav-main-link-bg-hover: 		transparent !default;
+
+$sk-nav-main-link-border:			none !default;
+$sk-nav-main-link-border-selected:	none !default;
+$sk-nav-main-link-border-hover:		none !default;
+$sk-nav-main-link-radius:			0 !default;
+
+$sk-nav-main-link-font:				$sk-base-font-family !default;
+$sk-nav-main-link-font-weight:		$sk-font-weight-normal !default;
+$sk-nav-main-link-text-align:		left !default;
+$sk-nav-main-link-text-transform:	initial !default;
+$sk-nav-main-link-letter-spacing:	0 !default;
+$sk-nav-main-link-font-size:		$sk-base-font-size !default;
+
+$sk-nav-logo-link-padding-left:		12px !default;
+$sk-nav-logo-link-font:				$sk-base-font-family !default;
+$sk-nav-logo-link-font-weight: 		$sk-font-weight-normal !default;
+$sk-nav-logo-link-text-transform: 	initial !default;
+$sk-nav-logo-link-letter-spacing: 	0 !default;
+$sk-nav-logo-link-font-size: 		$sk-base-font-size !default;
+$sk-nav-logo-link-color:			$sk-_white !default;
+
+////////////////////////////////
+
+////////////////////////////////
+
+// 8. Modal
+
+$sk-modal-bg-color:		$sk-gray-dark-rgba-40 !default;
+$sk-modal-mobile-width:	90% !default;
+$sk-modal-max-width:	600px !default;
+$sk-modal-padding:		6px 40px 40px !default;
+$sk-modal-color:		$sk-_white !default;
+$sk-modal-text-color:	$sk-gray-dark !default;
+$sk-modal-radius:		2px !default;
+$sk-modal-shadow:		0 0 30px rgba(0, 0, 0, 0.2) !default;
+$sk-modal-close-ident:	24px !default;
+
+$sk-modal-bg-trasition:	    visibility 0.2s , opacity 0.2s ease-in !default;
+$sk-modal-dialog-trasition:	visibility 0.2s , opacity 0.2s ease-in !default;
+
+$sk-modal-z-index:			9997 !default;
+$sk-modal-bg-z-index:		9998 !default;
+$sk-modal-dialog-z-index: 	9999 !default;
+
+////////////////////////////////
+
+////////////////////////////////
+
+// 9. Message
+//
+
+// TO DO: Make this useful
+
+$sk-message-padding: 	15px 30px 15px 20px !default;
+$sk-message-margin:		20px 0 !default;
+$sk-message-h4-margin:	0 0 6px !default;
+
+$sk-message-close-horizontal-ident:	16px !default;
+$sk-message-close-vertical-ident:	12px !default;
+$sk-message-close-size:				16px !default;
+
+$sk-message-success-border:		$sk-success-light-color 1px solid !default;
+$sk-message-success-bg:	$sk-success-lighter-color !default;
+$sk-message-success-color:		$sk-success-color !default;
+
+$sk-message-info-border:		$sk-gray-light 1px solid !default;
+$sk-message-info-bg:	$sk-gray-lighter !default;
+$sk-message-info-color:			$sk-gray-dark !default;
+
+////////////////////////////////
+
+////////////////////////////////
+
+// 10. Avatar
+//
+
+$sk-avatar-default-image:	url("../resources/assets/images/avatar.jpg") !default;
+
+$sk-avatar-small:	24px !default;
+$sk-avatar-medium:	60px !default;
+$sk-avatar-big:		96px !default;
+
+$sk-avatar-rounded-radius:	2px !default;
+$sk-avatar-circle-radius:	50% !default;
+
+////////////////////////////////
+
+////////////////////////////////
+
+// 11. Dropdown
+//
+
+// TO DO: Make this useful
+
+$sk-dropdown-icon: 			url("../resources/assets/icons/dropdown.svg") !default;
+$sk-dropdown-icon-size:		16px !default;
+$sk-dropdown-icon-margin:	12px !default;
+$sk-dropdown-padding:		12px 20px !default;
+$sk-dropdown-font-size:		0.875rem !default;
+$sk-dropdown-font-weight:	$sk-font-weight-400	 !default;
+$sk-dropdown-icon-ident:	$sk-dropdown-icon-size !default;
+
+$sk-dropdown-width:			160px !default;
+$sk-dropdown-bg:			#ffffff !default;
+$sk-dropdown-border:		1px solid $sk-gray-light !default;
+$sk-dropdown-box-shadow:	0px 2px 6px 0px rgba(61, 65, 71, 0.08) !default;
+$sk-dropdown-radius:		2px !default;
+
+$sk-dropdown-item-border:	none !default;
+
+$sk-dropdown-link-padding:		6px 0 !default;
+$sk-dropdown-link-color:		$sk-gray !default;
+$sk-dropdown-link-color-hover:	$sk-primary-color !default;
+
+
+////////////////////////////////
+
+////////////////////////////////
+
+// 12. Table
+
+$sk-table-padding-small:	6px 12px !default;
+$sk-table-padding-medium:	14px 24px !default;
+$sk-table-padding-big:		24px 38px !default;
+
+$sk-table-border-bg:	$sk-gray-lighter !default;
+$sk-table-border:				1px solid $sk-gray-light !default;
+
+
+////////////////////////////////
+
+////////////////////////////////
+
+// 13. Breadcrumbs
+
+//
+// 13.1 Breadcrumbs
+//
+
+$sk-breadcrumb-link-padding:		0 !default;
+$sk-breadcrumb-link-color:			$sk-gray !default;
+$sk-breadcrumb-link-color-hover:	$sk-primary-color !default;
+$sk-breadcrumb-link-color-selected:	$sk-gray-darker !default;
+
+$sk-breadcrumb-divider-margin:		0 10px !default;
+$sk-breadcrumb-divider-icon-size:	12px !default;
+$sk-breadcrumb-divider-icon:		url("../resources/assets/icons/right-chevron.svg") !default;
+
+////////////////////////////////
+
+////////////////////////////////
+
+// 14. Tooltip
+
+//
+// 14.1 Tooltip
+//
+
+// TO DO: Make this useful
+
+$tooltip-padding: 		5px 10px;
+$tooltip-radius: 		2px;
+$tooltip-dip-size: 		8px;
+$tooltip-bg:	$sk-gray-dark;
+$tooltip-color: 		$sk-_white;
+$tooltip-z-index: 		9999;
+
+
+
+
+////////////////////////////////
+
+////////////////////////////////
+
+
+// fountation Grid config
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// $include-html-grid-classes: true;
+// $include-xl-html-grid-classes: false;
+
+// $row-width: rem-calc(1000);
+// $total-columns: 12; //12, 16, 24
+// $column-gutter: rem-calc(30);
+
+
+// ////////////////////////////////////////////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////////////////////////////////////////////
+
+// // Last Version
+
+// // StarterKit by Fold
+
+// // Fonts
+
+// $sk-font-sans: 		Lato, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !default;
+// $sk-font-serif: 	Georgia, Cambria, "Times New Roman", Times, serif !default;
+// $sk-font-monospace: Consolas, "Liberation Mono", Courier, monospace !default;
+
+// $sk-font-weight-100: 	100 !default;
+// $sk-font-weight-200: 	200 !default;
+// $sk-font-weight-300: 	300 !default;
+// $sk-font-weight-400: 	400 !default;
+// $sk-font-weight-500: 	500 !default;
+// $sk-font-weight-600: 	600 !default;
+// $sk-font-weight-700: 	700 !default;
+// $sk-font-weight-800: 	800 !default;
+// $sk-font-weight-900: 	900 !default;
+// $sk-font-weight-normal: normal !default;
+// $sk-font-weight-bold: 	bold !default;
+
+// $sk-text-rendering: optimizeLegibility; 	// auto || optimizeSpeed || optimizeLegibility
+// $sk-font-smoothing : antialiased;			// subpixel-antialiased || antialiased;
+
+
+// ////////////////////////////////////////////////////////////////////////////////////////////////
+
+// ////////////////////////////////////////////////////////////////////////////////////////////////
+
+// ////////////////////////////////////////////////////////////////////////////////////////////////
+
+// // StarterKit by Fold
+// // colors.scss
+
+// // constant variables are marked with _
+// $sk-_black: 	#000000;
+// $sk-_white: 	#ffffff;
+// $sk-_silver: 	#C0C0C0;
+// $sk-_violet: 	#EE82EE;
+// $sk-_tomato: 	#FF6347;
+
+// //main colors
+// $sk-palette-light-color:	#000000 !default;
+// $sk-primary-color: 			#58A0DF !default;
+// $sk-secondary-color: 		#000000 !default;
+// $sk-tertiary-color:			#000000 !default;
+// $sk-palette-dark-color:		#000000 !default;
+
+// $sk-primary-color-rgba-30:	rgba(99, 177, 227, 0.30) !default;
+
+// //feedback colors
+// $sk-success-lighter-color:	#E2FAE9 !default;
+// $sk-success-light-color:	#A1D9B4 !default;
+// $sk-success-color:			#5CBA8E !default;
+
+// $sk-info-color: 	#9CA1A7 !default;
+// $sk-warning-color: 	#F8CB0E !default;
+// $sk-error-color: 	#EB555A !default;
+
+// //grays
+// $sk-gray-darker: 	#2B2C2D !default;
+// $sk-gray-dark: 		#3D4247 !default;
+// $sk-gray: 			#9CA1A7 !default;
+// $sk-gray-light: 	#D5DAE0 !default;
+// $sk-gray-lighter: 	#ECEFF1 !default;
+
+// $sk-gray-dark-rgba-40: rgba(61, 66, 71, 0.40) !default;
+
+
+// ////////////////////////////////////////////////////////////////////////////////////////////////
+
+// ////////////////////////////////////////////////////////////////////////////////////////////////
+
+// ////////////////////////////////////////////////////////////////////////////////////////////////
+
+// // General Settings
+
+// // 1. App settings
+// //
+
+// $sk-app-bg-color: 	$sk-_white !default;
+
+// $layer-bg:				-5000;
+// $layer-bg-increment:	0;
+// $layer0:				0;
+// $layer0-increment:		0;
+// $layer1:				5000;
+// $layer1-increment:		0;
+// $layer2:				10000;
+// $layer2-increment:		0;
+// $layer3:				15000;
+// $layer3-increment:		0;
+// $layer4:				20000;
+// $layer4-increment:		0;
+
+// // Foundation Grid Override
+
+// //$row-width: rem-calc(1000) !default;
+// //$total-columns: 12 !default;
+// //$column-gutter: rem-calc(30) !default;
+
+
+// // 1.1 Helpers
+// //
+
+// $sk-helper-padding-smallest:	12px !default;
+// $sk-helper-padding-small:		24px !default;
+// $sk-helper-padding-medium: 		36px !default;
+// $sk-helper-padding-big: 		48px !default;
+// $sk-helper-padding-biggest: 	60px !default;
+
+// $sk-helper-margin-smallest:	12px !default;
+// $sk-helper-margin-small:	24px !default;
+// $sk-helper-margin-medium: 	36px !default;
+// $sk-helper-margin-big: 		48px !default;
+// $sk-helper-margin-biggest: 	60px !default;
+
+
+// //
+// ////////////////////////////////
+
+// // 2. Typography
+// //
+// // 2.1 Base Font Settings
+// //
+
+// $sk-base-font-size: 		16 !default;			//base settings aka base unit for most multipliers
+// $sk-base-font-family: 		$sk-font-sans !default;
+// $sk-base-color: 			$sk-gray-dark !default;
+// $sk-base-line-height: 		$sk-base-font-size*1.5 !default;
+// $sk-base-secondary-color: 	$sk-gray !default;
+
+// // 2.2 Headings
+// //
+// // set heading value or it uses default one
+
+// $sk-heading-sizes: 		setHeadingsFontSize(60px, 48px, 36px, 24px, 18px) !default;
+
+// $sk-heading-biggest-size: 	nth($sk-heading-sizes, 1) !default;
+// $sk-heading-big-size: 		nth($sk-heading-sizes, 2) !default;
+// $sk-heading-medium-size: 	nth($sk-heading-sizes, 3) !default;
+// $sk-heading-small-size: 	nth($sk-heading-sizes, 4) !default;
+// $sk-heading-smallest-size: 	nth($sk-heading-sizes, 5) !default;
+
+// $sk-heading-gutter-top: 	setHeadingsGutter(42px, 36px, 30px, 24px, 18px) !default;
+// $sk-heading-gutter-bottom: 	setHeadingsGutter(42px, 36px, 30px, 24px, 18px) !default;
+
+// $sk-heading-biggest-gutter-top: 	nth($sk-heading-gutter-top, 1) !default;
+// $sk-heading-big-gutter-top: 		nth($sk-heading-gutter-top, 2) !default;
+// $sk-heading-medium-gutter-top: 		nth($sk-heading-gutter-top, 3) !default;
+// $sk-heading-small-gutter-top: 		nth($sk-heading-gutter-top, 4) !default;
+// $sk-heading-smallest-gutter-top: 	nth($sk-heading-gutter-top, 5) !default;
+
+// $sk-heading-biggest-gutter-bottom: 	nth($sk-heading-gutter-bottom, 1) !default;
+// $sk-heading-big-gutter-bottom: 		nth($sk-heading-gutter-bottom, 2) !default;
+// $sk-heading-medium-gutter-bottom: 	nth($sk-heading-gutter-bottom, 3) !default;
+// $sk-heading-small-gutter-bottom: 	nth($sk-heading-gutter-bottom, 4) !default;
+// $sk-heading-smallest-gutter-bottom: nth($sk-heading-gutter-bottom, 5) !default;
+
+// $sk-heading-biggest-weight: 	$sk-font-weight-bold !default;
+// $sk-heading-big-weight: 		$sk-font-weight-bold !default;
+// $sk-heading-medium-weight: 		$sk-font-weight-bold !default;
+// $sk-heading-small-weight: 		$sk-font-weight-bold !default;
+// $sk-heading-smallest-weight: 	$sk-font-weight-normal !default;
+
+// // 2.3 Paragraphs
+// //
+
+// $sk-paragraph-size-big: 	$sk-base-font-size * 1.2 !default;
+// $sk-paragraph-size: 		$sk-base-font-size !default;
+// $sk-paragraph-size-small: 	$sk-base-font-size * 0.8 !default;
+
+// $sk-paragraph-line-height-big: 		$sk-base-font-size * 1.5 * 1.2 !default;
+// $sk-paragraph-line-height: 			$sk-base-font-size * 1.5 !default;
+// $sk-paragraph-line-height-small: 	$sk-base-font-size * 1.5 * 0.8 !default;
+
+// $sk-paragraph-margin-big: 	24px 0 !default;
+// $sk-paragraph-margin: 		16px 0 !default;
+// $sk-paragraph-margin-small: 12px 0 !default;
+
+// // 2.4 Links <a>
+// //
+
+// $sk-a-color: 			$sk-primary-color !default;
+// $sk-a-decoration: 		none !default;
+// $sk-a-decoration-hover: underline !default;
+
+// //
+// ////////////////////////////////
+
+// // 3. Buttons
+// //
+// // Buttons base styles
+
+// $sk-button-font: 			$sk-base-font-family !default;
+// $sk-button-font-weight:		$sk-font-weight-normal !default;
+// $sk-button-text-align: 		center !default;
+// $sk-button-text-transform: 	none !default;
+// $sk-button-letter-spacing: 	0 !default;
+// $sk-button-border-style: 	solid !default;
+// $sk-button-cursor: 			pointer !default;
+
+// $sk-button-font-size-big: 	$sk-base-font-size * 1.2 !default;
+// $sk-button-font-size: 		$sk-base-font-size !default;
+// $sk-button-font-size-small: $sk-base-font-size * 0.8 !default;
+
+// $sk-button-padding-vertical-big:	20px !default;
+// $sk-button-padding-vertical-medium:	14px !default;
+// $sk-button-padding-vertical-small:	8px !default;
+
+// $sk-button-padding-sides-big:		36px !default;
+// $sk-button-padding-sides-medium:	24px !default;
+// $sk-button-padding-sides-small:		12px !default;
+
+// $sk-button-border-width-big: 		1px !default;
+// $sk-button-border-width-medium: 	1px !default;
+// $sk-button-border-width-small: 		1px !default;
+// $sk-button-border-radius-big:		3px !default;
+// $sk-button-border-radius-medium:	2px !default;
+// $sk-button-border-radius-small:		2px !default;
+
+// $sk-button-bg: 			$sk-primary-color !default;
+// $sk-button-success-bg:	$sk-success-color !default;
+// $sk-button-disabled-bg:		$sk-info-color !default;
+// $sk-button-warning-bg:	$sk-warning-color !default;
+// $sk-button-error-bg:	$sk-error-color !default;
+
+// $sk-button-bg-hover-dark:	12% !default;
+
+// $sk-button-bg-hover: 			shade($sk-button-bg, $sk-button-bg-hover-dark) !default;
+// $sk-button-success-bg-hover:	shade($sk-button-success-bg, $sk-button-bg-hover-dark) !default;
+// $sk-button-disabled-bg-hover:		shade($sk-button-disabled-bg, $sk-button-bg-hover-dark) !default;
+// $sk-button-warning-bg-hover:	shade($sk-button-warning-bg, $sk-button-bg-hover-dark) !default;
+// $sk-button-error-bg-hover:		shade($sk-button-error-bg, $sk-button-bg-hover-dark) !default;
+
+// $sk-button-color: 			$sk-_white !default;
+// $sk-button-success-color:	$sk-_white !default;
+// $sk-button-disabled-color:		$sk-_white !default;
+// $sk-button-warning-color:	$sk-_white !default;
+// $sk-button-error-color:	$sk-_white !default;
+
+// $sk-button-color-hover: 		$sk-_white !default;
+// $sk-button-success-color-hover:	$sk-_white !default;
+// $sk-button-disabled-color-hover:	$sk-_white !default;
+// $sk-button-warning-color-hover:	$sk-_white !default;
+// $sk-button-error-color-hover:	$sk-_white !default;
+
+// $sk-button-border-color: 			transparent !default;
+// $sk-button-success-border-color:	transparent !default;
+// $sk-button-disabled-border-color:		transparent !default;
+// $sk-button-warning-border-color:	transparent !default;
+// $sk-button-error-border-color:		transparent !default;
+
+
+// // 3.1 Secondary
+// //
+
+// $sk-button-secondary-font: 				$sk-base-font-family !default;
+// $sk-button-secondary-font-weight:		$sk-font-weight-bold !default;
+// $sk-button-secondary-text-align: 		center !default;
+// $sk-button-secondary-text-transform: 	uppercase !default;
+// $sk-button-secondary-letter-spacing: 	1px !default;
+// $sk-button-secondary-border-style: 		solid !default;
+// $sk-button-secondary-cursor: 			pointer !default;
+// $sk-button-secondary-font-size: 		$sk-base-font-size !default;
+// $sk-button-secondary-padding-vertical:	14px !default;
+// $sk-button-secondary-padding-sides:		24px !default;
+// $sk-button-secondary-border-width: 		1px !default;
+// $sk-button-secondary-border-radius:		2px !default;
+// $sk-button-secondary-bg:				transparent !default; 
+// $sk-button-secondary-bg-hover:			$sk-primary-color !default;
+// $sk-button-secondary-color: 			$sk-primary-color !default;
+// $sk-button-secondary-color-hover: 		$sk-_white !default;
+// $sk-button-secondary-border-color: 		$sk-primary-color !default;
+
+
+// // 3.2 Terciary
+// //
+
+// $sk-button-terciary-font: 				$sk-base-font-family !default;
+// $sk-button-terciary-font-weight:		$sk-font-weight-300 !default;
+// $sk-button-terciary-text-align: 		left !default;
+// $sk-button-terciary-text-transform: 	capitalize !default;
+// $sk-button-terciary-letter-spacing: 	0 !default;
+// $sk-button-terciary-border-style: 		solid !default;
+// $sk-button-terciary-cursor: 			pointer !default;
+// $sk-button-terciary-font-size: 			$sk-base-font-size !default;
+// $sk-button-terciary-padding-vertical:	14px !default;
+// $sk-button-terciary-padding-sides:		24px !default;
+// $sk-button-terciary-border-width: 		1px !default;
+// $sk-button-terciary-border-radius:		100rem !default;
+// $sk-button-terciary-bg:					$sk-primary-color !default; 
+// $sk-button-terciary-bg-hover:			$sk-button-bg-hover !default;
+// $sk-button-terciary-color: 				$sk-_white !default;
+// $sk-button-terciary-color-hover: 		$sk-_white !default;
+// $sk-button-terciary-border-color: 		$sk-primary-color !default;
+
+
+// ////////////////////////////////
+
+// // 4. Inputs
+// //
+// // Inputs base styles
+// //
+
+// // Input Label
+// //
+
+// $sk-label-font-size: 	$sk-base-font-size; // TO DO: Fix this, it no make sense
+// $sk-label-color: 		$sk-_black; // TO DO: Fix this, it no make sense
+
+// $sk-input-label-font-size: 	$sk-base-font-size !default;
+// $sk-input-label-color: 		$sk-_black !default;
+// $sk-input-label-bg: 		transparent !default;
+// $sk-input-label-padding: 	8px 0px !default;
+
+// //
+// // 4.1 Text Input
+// //
+
+// $sk-input-border-thickness:	1px !default;
+// $sk-input-border-radius: 	2px !default;
+// $sk-input-border-color: 	$sk-gray-dark !default;
+// $sk-input-border-focus: 	$sk-primary-color !default;
+// $sk-input-padding: 			15px !default;
+// $sk-input-placeholder: 		$sk-gray !default;
+// $sk-input-color: 			$sk-_black !default;
+// $sk-input-bg: 		$sk-_white !default;
+// $sk-input-shadow-default:	none !default;
+// $sk-input-shadow-focus:		0px 0px 5px $sk-primary-color-rgba-30 !default;
+
+// // 4.1.1 Text Password
+
+// $sk-input-password-image:		url("../resources/assets/icons/lockedalt.svg") !default;
+// $sk-input-password-position:	95% !default;
+
+// //
+// // 4.2 Text Input Secondary
+// //
+
+// $sk-input-secondary-border-thickness:	1px !default;
+// $sk-input-secondary-border-radius: 		2px !default;
+// $sk-input-secondary-border-color: 		$sk-gray-light !default;
+// $sk-input-secondary-border-focus: 		$sk-primary-color !default;
+// $sk-input-secondary-padding: 			15px !default;
+// $sk-input-secondary-placeholder: 		$sk-gray !default;
+// $sk-input-secondary-color: 				$sk-_black !default;
+// $sk-input-secondary-bg: 		$sk-gray-lighter !default;
+
+// //
+// // 4.3 Radio Input
+// //
+
+// // TO DO: Make this useful
+
+// $radio-gutter 			: 0px 15px 0px 0px;
+// $radio-border 			: $sk-gray-dark 1px solid;
+// $radio-size 			: 26;
+// $radio-bg 		: $sk-_white;
+// $radio-checked-size 	: 0.4;
+// $radio-checked-border 	: $sk-gray-dark 8px solid;
+
+// $label-radio-color 		: $sk-label-color;
+// $label-radio-gutter 	: 10px 20px 10px 0px;
+// $label-radio-font-size 	: $sk-label-font-size;
+
+// //
+// // 4.4 Checkbox Input
+// //
+
+// // TO DO: Make this useful
+
+// $checkbox-gutter 		: 0px 15px 0px 0px;
+// $checkbox-border 		: $sk-gray-dark 1px solid;
+// $checkbox-size 		    : 26;
+// $checkbox-bg 	: $sk-_white;
+// $checkbox-border-radius	: 2px;
+
+// $label-checkbox-color 		: $sk-label-color;
+// $label-checkbox-gutter 	    : 10px 20px 10px 0px;
+// $label-checkbox-font-size   : $sk-label-font-size;
+
+// //
+// // 4.5 Switch Input 
+// //
+
+// // TO DO: Make this useful
+
+// $sk-switch-height: 		42;
+// $sk-switch-width:			84;
+// $sk-switch-border-size: 	1;
+// $sk-switch-color: 			$sk-_white;
+// $sk-switch-border:			$sk-switch-border-size+px solid $sk-gray-dark;
+// $sk-switch-border-checked:	$sk-switch-border-size+px solid $sk-gray;
+
+// $sk-switch-circle-size:			30;
+// $sk-switch-circle-ident: 			($sk-switch-height - $sk-switch-circle-size - $sk-switch-border-size*2)/2;;
+// $sk-switch-circle-color:			$sk-gray-dark;
+// $sk-switch-circle-color-checked:	$sk-_white;
+// $sk-switch-circle-margin-checked:	$sk-switch-width - $sk-switch-circle-size - $sk-switch-circle-ident*2 - $sk-switch-border-size*2;
+// $sk-switch-circle-border:			$sk-switch-border-size+px solid $sk-gray-dark;
+// $sk-switch-circle-border-checked:	$sk-switch-border-size+px solid $sk-gray;
+
+// //
+// // 4.6 Select Input (not really done for select input)
+// //
+
+// // TO DO: Make this useful
+
+// $select-wrap-height:			56px;
+// $select-border:					1px solid $sk-gray-light;
+// $select-radius:					2px;
+// $select-defaut-padding-right:	40px;
+// $select-dropdown-icon-ident:	20px;
+// $select-box-shadow:				0px 2px 6px 0px rgba(61, 65, 71, 0.08);
+// $select-option-border:			1px $sk-gray-lighter solid;
+// $select-bg-color:		$sk-_white;
+
+// $select-option-padding:			15px 20px;
+// $select-option-color: 			$sk-gray;
+// $select-option-color-hover: 	$sk-gray-dark;
+
+
+// ////////////////////////////////
+
+// // 5. Sections and Containers
+// //
+// // 5.1 Spacings
+// //
+
+// $sk-section-vertical-offset-big-multiplier: 	3.5 !default;	//offset as margin
+// $sk-section-vertical-offset-medium-multiplier: 	3 !default;
+// $sk-section-vertical-offset-small-multiplier:	2.5 !default;
+
+// $sk-content-vertical-inset-big-multiplier: 		2 !default;	//inset as padding
+// $sk-content-vertical-inset-medium-multiplier: 	1.5 !default;
+// $sk-content-vertical-inset-small-multiplier: 	1.25 !default;
+
+// $sk-panel-vertical-inset-big-multiplier: 	1.25 !default;		//inset as padding
+// $sk-panel-vertical-inset-medium-multiplier: 1 !default;
+// $sk-panel-vertical-inset-small-multiplier: 	0.5 !default;
+
+// ////////////////////////////////
+
+// ////////////////////////////////
+
+// // 6. Elements Customization
+// //
+// // 6.1 hr
+// //
+
+// // TO DO: Make this useful
+
+// $hr-primary-color: 		$sk-_black;
+// $hr-secondary-color: 	$sk-gray-light;
+// $hr-primary-height: 	1px;
+// $hr-secondary-height: 	$hr-primary-height;
+// $hr-full-width: 		100%;
+// $hr-big-width: 			$sk-base-font-size * 50;
+// $hr-medium-width: 		$sk-base-font-size * 25;
+// $hr-small-width: 		$sk-base-font-size * 15;
+
+// $hr-big-height: 		4px;
+// $hr-medium-height: 		2px;
+// $hr-small-height: 		1px;
+
+// //
+// // 6.2 hero
+// //
+
+// $sk-hero-width: 		100% !default;
+// $sk-hero-height: 		500px !default;
+// $sk-hero-margin-top: 	30px !default;
+// $sk-hero-margin-bottom: 30px !default;
+
+// ////////////////////////////////
+
+// ////////////////////////////////
+
+// // 7. Navigation
+
+// //
+// // 7.1 General Nav
+// //
+
+// $sk-nav-font: 			$sk-base-font-family !default;
+// $sk-nav-font-weight:	$sk-font-weight-normal !default;
+// $sk-nav-text-align: 	left !default;
+// $sk-nav-text-transform: none !default;
+// $sk-nav-letter-spacing: 0 !default;
+// $sk-nav-font-size: 		$sk-base-font-size !default;
+
+// $sk-nav-link-color:				$sk-gray !default;
+// $sk-nav-link-color-hover:		$sk-primary-color !default;
+// $sk-nav-link-color-selected:	$sk-gray-darker !default;
+// $sk-nav-link-bg:				transparent !default;
+// $sk-nav-link-bg-hover:			transparent !default;
+// $sk-nav-link-bg-selected:		transparent !default;
+// $sk-nav-link-padding-vertical:	0px !default;
+// $sk-nav-link-padding-sides:		0px !default;
+
+// $sk-nav-border-size: 		1px !default;
+// $sk-nav-border:				none !default;
+// $sk-nav-border-hover:		none !default;
+// $sk-nav-border-selected: 	none !default;
+// $sk-nav-radius:				0 !default;
+
+// //
+// // 7.2 nav horizontal
+// //
+
+// $sk-nav-horizontal-item-spacing: 36px !default;
+
+// //
+// // 7.3 nav vertical
+// //
+
+// //$sk-nav-vertical-link-selected-icon:		url("../resources/assets/icons/right-chevron.svg");
+// //$sk-nav-vertical-link-selected-icon-ident:	10px;
+// //$sk-nav-vertical-link-selected-icon-size: 	16px;
+
+// $sk-nav-vertical-link-padding-vertical:	8px !default;
+// $sk-nav-vertical-link-padding-sides:	0px !default;
+
+// //
+// // 7.4 nav main
+// //
+
+// $sk-nav-main-bg: $sk-gray-dark !default;
+
+// $sk-nav-logo-margin-left:		20px !default;
+// $sk-nav-logo-link-margin-right:	20px !default;
+
+// $sk-nav-main-link-padding-vertical:	20px !default !default;
+// $sk-nav-main-link-padding-sides:	20px !default !default;
+// $sk-nav-main-link-color:			$sk-gray !default;
+// $sk-nav-main-link-color-selected:	$sk-_white !default;
+// $sk-nav-main-link-color-hover:		$sk-_white !default;
+// $sk-nav-main-link-bg:				transparent !default;
+// $sk-nav-main-link-bg-selected:		$sk-gray-darker !default;
+// $sk-nav-main-link-bg-hover: 		transparent !default;
+
+// $sk-nav-main-link-border:			none !default;
+// $sk-nav-main-link-border-selected:	none !default;
+// $sk-nav-main-link-border-hover:		none !default;
+// $sk-nav-main-link-radius:			0 !default;
+
+// $sk-nav-main-link-font:				$sk-base-font-family !default;
+// $sk-nav-main-link-font-weight:		$sk-font-weight-normal !default;
+// $sk-nav-main-link-text-align:		left !default;
+// $sk-nav-main-link-text-transform:	none !default;
+// $sk-nav-main-link-letter-spacing:	0 !default;
+// $sk-nav-main-link-font-size:		$sk-base-font-size !default;
+
+// $sk-nav-logo-link-padding-left:		12px !default;
+// $sk-nav-logo-link-font:				$sk-base-font-family !default;
+// $sk-nav-logo-link-font-weight: 		$sk-font-weight-normal !default;
+// $sk-nav-logo-link-text-transform: 	none !default;
+// $sk-nav-logo-link-letter-spacing: 	0 !default;
+// $sk-nav-logo-link-font-size: 		$sk-base-font-size !default;
+// $sk-nav-logo-link-color:			$sk-_white !default;
+
+// ////////////////////////////////
+
+// ////////////////////////////////
+
+// // 8. Modal
+
+// $sk-modal-bg-color:		$sk-gray-dark-rgba-40 !default;
+// $sk-modal-mobile-width:	90% !default;
+// $sk-modal-max-width:	600px !default;
+// $sk-modal-padding:		6px 40px 40px !default;
+// $sk-modal-color:		$sk-_white !default;
+// $sk-modal-text-color:	$sk-gray-dark !default;
+// $sk-modal-radius:		2px !default;
+// $sk-modal-shadow:		0 0 30px rgba(0, 0, 0, 0.2) !default;
+// $sk-modal-close-ident:	24px !default;
+
+// $sk-modal-bg-trasition:	    visibility 0.2s , opacity 0.2s ease-in !default;
+// $sk-modal-dialog-trasition:	visibility 0.2s , opacity 0.2s ease-in !default;
+
+// $sk-modal-z-index:			9997 !default;
+// $sk-modal-bg-z-index:		9998 !default;
+// $sk-modal-dialog-z-index: 	9999 !default;
+
+// ////////////////////////////////
+
+// ////////////////////////////////
+
+// // 9. Message
+// //
+
+// // TO DO: Make this useful
+
+// $sk-message-padding: 	15px 30px 15px 20px !default;
+// $sk-message-margin:		20px 0 !default;
+// $sk-message-h4-margin:	0 0 6px !default;
+
+// $sk-message-close-horizontal-ident:	16px !default;
+// $sk-message-close-vertical-ident:	12px !default;
+// $sk-message-close-size:				16px !default;
+
+// $sk-message-success-border:		$sk-success-light-color 1px solid !default;
+// $sk-message-success-bg:	$sk-success-lighter-color !default;
+// $sk-message-success-color:		$sk-success-color !default;
+
+// $sk-message-info-border:		$sk-gray-light 1px solid !default;
+// $sk-message-info-bg:	$sk-gray-lighter !default;
+// $sk-message-info-color:			$sk-gray-dark !default;
+
+// ////////////////////////////////
+
+// ////////////////////////////////
+
+// // 10. Avatar
+// //
+
+// $sk-avatar-default-image:	url("../resources/assets/images/avatar.jpg") !default;
+
+// $sk-avatar-small:	24px !default;
+// $sk-avatar-medium:	60px !default;
+// $sk-avatar-big:		96px !default;
+
+// $sk-avatar-rounded-radius:	2px !default;
+// $sk-avatar-circle-radius:	50% !default;
+
+// ////////////////////////////////
+
+// ////////////////////////////////
+
+// // 11. Dropdown
+// //
+
+// // TO DO: Make this useful
+
+// $dropdown-icon: 		url("../resources/assets/icons/dropdown.svg");
+// $dropdown-icon-size:	16px;
+// $dropdown-icon-margin:	12px;
+// $dropdown-icon-ident:	$dropdown-icon-margin + $dropdown-icon-size + $sk-nav-link-padding-sides + !important;
+
+// $dropdown-width:		160px;
+// $dropdown-bg:	#ffffff;
+// $dropdown-border:		1px solid $sk-gray-light;
+// $dropdown-box-shadow:	0px 2px 6px 0px rgba(61, 65, 71, 0.08);
+// $dropdown-radius:		2px;
+
+// $dropdown-link-padding:	15px;
+// $dropdown-link-color:	$sk-gray;
+
+// ////////////////////////////////
+
+// ////////////////////////////////
+
+// // 12. Table
+
+// $sk-table-padding-small:	6px 12px !default;
+// $sk-table-padding-medium:	14px 24px !default;
+// $sk-table-padding-big:		24px 38px !default;
+
+// $sk-table-border-bg:	$sk-gray-lighter !default;
+// $sk-table-border:				1px solid $sk-gray-light !default;
+
+// ////////////////////////////////
+
+// ////////////////////////////////
+
+// // 13. Breadcrumbs
+
+// //
+// // 13.1 Breadcrumbs
+// //
+
+// $sk-breadcrumb-link-padding:		0 !default;
+// $sk-breadcrumb-link-color:			$sk-gray !default;
+// $sk-breadcrumb-link-color-hover:	$sk-primary-color !default;
+// $sk-breadcrumb-link-color-selected:	$sk-gray-darker !default;
+
+// $sk-breadcrumb-divider-margin:		0 10px !default;
+// $sk-breadcrumb-divider-icon-size:	12px !default;
+// $sk-breadcrumb-divider-icon:		url("../resources/assets/icons/right-chevron.svg") !default;
+
+// ////////////////////////////////
+
+// ////////////////////////////////
+
+// // 14. Tooltip
+
+// //
+// // 14.1 Tooltip
+// //
+
+// // TO DO: Make this useful
+
+// $tooltip-padding: 		5px 10px;
+// $tooltip-radius: 		2px;
+// $tooltip-dip-size: 		8px;
+// $tooltip-bg:	$sk-gray-dark;
+// $tooltip-color: 		$sk-_white;
+// $tooltip-z-index: 		9999;
+
+
+
+
+// ////////////////////////////////
+
+// ////////////////////////////////
+
+
+// // fountation Grid config
+// // - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// // $include-html-grid-classes: true;
+// // $include-xl-html-grid-classes: false;
+
+// // $row-width: rem-calc(1000);
+// // $total-columns: 12; //12, 16, 24
+// // $column-gutter: rem-calc(30);
+
+
+

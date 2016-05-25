@@ -1,0 +1,82 @@
+// StarterKit by Fold
+// tooltip.scss
+
+.tip {
+	position: relative;
+
+	&:hover {
+		.tooltip {
+			display: block;
+		}
+	}
+}
+
+.tooltip {
+	display: none;
+	position: absolute;
+	padding: $tooltip-padding;
+	border-radius: $tooltip-radius;
+
+	background-color: $tooltip-bg;
+	color: $tooltip-color;
+
+	z-index: $tooltip-z-index;
+
+	&:after {
+		background-color: $tooltip-bg;
+		position: absolute;
+		display: block;
+		content: "";
+		width: $tooltip-dip-size;
+		height: $tooltip-dip-size;
+	}
+
+	&.top {
+		bottom: 120%;
+		left: 50%;
+		transform: translate(-50%, 0);
+
+		&:after {
+			bottom: -($tooltip-dip-size/2);
+			left: 50%;
+			transform: translate(-50%, 0) rotate(45deg); 
+		}
+	}
+	
+	&.bottom {
+		top: 120%;
+		left: 50%;
+		transform: translate(-50%, 0);
+
+		&:after {
+			top: -($tooltip-dip-size/2);
+			left: 50%;
+			transform: translate(-50%, 0) rotate(45deg); 
+		}
+	}
+
+	&.left {
+		top: 50%;
+		right: 120%;
+		transform: translate(0, -50%);
+
+		&:after {
+			right: -($tooltip-dip-size/2);
+			top: 50%;
+			transform: translate(0, -50%) rotate(45deg);
+		}
+	}
+
+	&.right {
+		top: 50%;
+		left: 120%;
+		transform: translate(0, -50%);
+
+		&:after {
+			left: -($tooltip-dip-size/2);
+			top: 50%;
+			transform: translate(0, -50%) rotate(45deg);
+		}
+	}
+}
+

@@ -1,0 +1,18 @@
+// StarterKit by Fold Components
+// spacing.scss
+
+$spacing-big-multiplier: 	1.5;
+$spacing-medium-multiplier: 1;
+$spacing-small-multiplier: 	0.5;
+
+.s-margin-medium {
+
+	margin: $sk-base-font-size * $medium-multiplier;
+
+}
+
+.s-padding-medium {
+
+	padding: $sk-base-font-size * $medium-multiplier;
+
+}

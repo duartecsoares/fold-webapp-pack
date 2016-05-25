@@ -1,0 +1,72 @@
+// StarterKit by Fold
+// switch.scss
+
+.switch {
+    display: block;
+    width: $sk-switch-width+px;
+    height: $sk-switch-height+px;
+    -webkit-user-select: none; /* Chrome/Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+
+    .switch-input {
+        display: none;
+
+    }
+
+    .switch-label {
+        display: block;
+        width: $sk-switch-width+px;
+        height: $sk-switch-height+px;
+        border: $sk-switch-border;
+        border-radius: $sk-switch-height+px;
+        transition: border 0.3s;
+        cursor: pointer;
+        background-color: $sk-switch-color-bg;
+    }
+
+    .switch-input + .switch-label:after {
+        display: block;
+        position: relative;
+        content: "";
+    }
+
+    .switch-input + .switch-label:after {
+        top: $sk-switch-circle-ident+px;
+        left: $sk-switch-circle-ident+px;
+        width: $sk-switch-circle-size+px;
+        height: $sk-switch-circle-size+px;
+        background-color: transparent;
+        border: $sk-switch-border;
+        border-radius: $sk-switch-circle-size+px;
+        transition: -webkit-transform 0.3s, background 0.3s, border 0.3s;
+    }
+
+    //Checked
+
+    .switch-input:checked + .switch-label {
+        border: $sk-switch-border-checked;
+    }
+
+    .switch-input:checked + .switch-label:after {
+        background-color: $sk-switch-color-checked;
+        border: $sk-switch-border-checked;
+        -webkit-transform: translate($sk-switch-circle-margin-checked+px,0);
+    }
+
+    &.switch-right {
+        .switch-input + .switch-label:after {
+            left: $sk-switch-circle-ident+$sk-switch-circle-margin-checked+px;
+        }
+
+        //Checked
+
+        .switch-input:checked + .switch-label:after {
+            -webkit-transform: translate(-$sk-switch-circle-margin-checked+px,0);
+        }
+    }
+}
+
+
+
+

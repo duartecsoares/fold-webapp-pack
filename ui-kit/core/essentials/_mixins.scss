@@ -1,0 +1,16 @@
+// StarterKit by Fold
+// mixins.scss
+
+@mixin font-smoothing($smoothing) {
+
+  -webkit-font-smoothing: $smoothing;
+
+}
+
+@mixin clear-appearance(){
+	
+	-moz-appearance:none;
+    -webkit-appearance:none;
+	appearance:none;    
+
+}
