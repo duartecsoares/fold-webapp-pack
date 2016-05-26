@@ -640,7 +640,7 @@ a:active,a:focus {
 	
 	transform: scale(1,1);
 	opacity: 1;
-	transition: transform 0.25s $customCubicBezier, opacity 0.16s linear, background-color 0.16s linear;
+	transition: transform 0.25s ease-in, opacity 0.16s linear, background-color 0.16s linear;
 	transition-delay: 0s;
 	z-index: 2;
 

@@ -116,7 +116,7 @@ module.exports = function(grunt){
 
 	     		files: {
 
-			        'dist/css/foldwebapppack.css': 'ui-kit/project/foldwebapppack.scss'
+			        'dist/css/foldwebapppack.css': 'ui-kit/app/foldwebapppack.scss'
 			    }
 	     	}    
 

@@ -5,20 +5,6 @@ $rem-base: 			16px;
 $last-child-float: 	left;
 $column-gutter: 	3rem;
 
-//  ############################################  CDN Path
-
-$cdn-interface : "https://s3.amazonaws.com/buildit-storage/webapp/";
-
-@function asset($name, $folder : 'interface', $cdn : true){
-	$base : "assets/";
-	@if $cdn == true { $base : $cdn-interface; }
-	@return $base + $folder + "/" + $name;
-}
-
-@function asset-url($name, $folder : 'interface', $cdn : true){
-	@return url( asset($name, $folder, $cdn) );
-}
-
 //  ############################################  StarterKit by Fold
 
 // Fonts
