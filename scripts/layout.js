@@ -15,9 +15,6 @@ define(["fold/layout",
 			layout.$body = $("body");
 			layout.$el = $("#app");
 
-			$loader = layout.$el.find("[data-view='loader']");
-			$loader.remove();
-
 			layout.addEvents();
 			layout.base = { header: new HeaderView({ idView: "layout-header-view" }), container: new ContainerView({ idView: "layout-container-view" }), footer: new FooterView({ idView: "layout-footer-view" }) }
 
@@ -61,23 +58,12 @@ define(["fold/layout",
 
 			});
 
-			if ( "ontouchstart" in window || navigator.msMaxTouchPoints ) {
-				
-				layout.$body.addClass('touch-device');
-			
-			} else {
-				
-				layout.$body.addClass('not-touch-device');
-			
-			}
-
 		},
 
 		tourMode : function(action){
 
 			var layout 			= this,
-				containerView	= layout.model.views["app-container"],
-				transitionEvent	= "transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd";
+				containerView	= layout.model.views["app-container"];
 
 			if (action === "on") {
 

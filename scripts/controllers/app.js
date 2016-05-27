@@ -11,7 +11,7 @@ define(["fold/controller",
 
 			Backbone.router = appRouter;
 			layout.build();
-			this.startRouting();
+			this.assignRoutes();
 			Backbone.history.loadUrl();
 
 		},
@@ -41,7 +41,7 @@ define(["fold/controller",
 
 		},
 
-		startRouting : function(){
+		assignRoutes : function(){
 
 			var appController 	= this,
 				controllersMap  = {
