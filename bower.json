@@ -11,7 +11,7 @@
   	"requirejs-text": "2.0.14",
     "requirejs-json": "0.0.3",
     "requirejs-plugins": "1.0.3",
-    "foundation": "5.3.2",
+    "foundation": "5.5.3",
     "mocha": "*",
     "chai": "*"
   }
