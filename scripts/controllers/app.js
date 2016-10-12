@@ -9,6 +9,7 @@ define(["fold/controller",
 
 		boot : function(){
 
+			layout.$dom.find("[data-view='app-loader']").remove();
 			Backbone.router = appRouter;
 			layout.build();
 			this.assignRoutes();
