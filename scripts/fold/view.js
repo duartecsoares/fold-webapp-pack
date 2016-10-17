@@ -27,7 +27,7 @@ define(["utils/binded-event-actions"], function(BindedEventsActions){
 								description : "adsd",
 								link: { url : "" }
 
-							}) : Model,
+							}) : (Model) ? Model : {},
 							JSON  = (typeof model.toJSON === "function") ? model.toJSON() : model;
 
 						Object.keys(JSON).map(function(key){
